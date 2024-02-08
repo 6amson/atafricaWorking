@@ -16,16 +16,19 @@ export default function Home() {
 
   const services = [
     {
+      id: 1,
       image: serviceLogo1,
       title: "Ideation & Validation",
       body: "Shape your startup ideas with expert guidance and check their potential in the market."
     },
     {
+      id: 2,
       image: serviceLogo2,
       title: "Business Support",
       body: "Get advice, workspace, funding, and partnerships for your business growth."
     },
     {
+      id: 3,
       image: serviceLogo3,
       title: "Brand & Growth Strategy",
       body: "Build a strong brand, run effective campaigns, stay compliant, and plan for long-term success."
@@ -84,7 +87,7 @@ export default function Home() {
         <div className='services--section2'>
           {
             services.map((service) => (
-              <div>
+              <div key={service.id}>
                 <Image src={service.image} alt={service.title} className='services--section2--img' />
                 <p className='services--section2--para1'>{service.title}</p>
                 <hr />
