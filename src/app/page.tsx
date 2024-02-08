@@ -6,9 +6,32 @@ import salesforce from '../../assets/salesforce.svg';
 import airbnb from '../../assets/airbnb.svg';
 import google from '../../assets/google.svg';
 import microsoft from '../../assets/microsoft.svg';
+import serviceLogo1 from '../../assets/services_logo1.svg';
+import serviceLogo2 from '../../assets/services_logo2.svg';
+import serviceLogo3 from '../../assets/services_logo3.svg';
+
 
 
 export default function Home() {
+
+  const services = [
+    {
+      image: serviceLogo1,
+      title: "Ideation & Validation",
+      body: "Shape your startup ideas with expert guidance and check their potential in the market."
+    },
+    {
+      image: serviceLogo2,
+      title: "Business Support",
+      body: "Get advice, workspace, funding, and partnerships for your business growth."
+    },
+    {
+      image: serviceLogo3,
+      title: "Brand & Growth Strategy",
+      body: "Build a strong brand, run effective campaigns, stay compliant, and plan for long-term success."
+    }
+  ]
+
   return (
     <main className="container">
       <div className="main">
@@ -19,7 +42,7 @@ export default function Home() {
             entrepreneurial journey of a lifetime, shaping tomorrow&apos;s
             success stories, one innovation at a time.
             Welcome to the next era of creativity and collaboration!</p>
-          <div className='partneSection--text'>
+          <div>
             <p>PARTNER WITH US</p>
             <Image src={arrow} alt='arrow pointed right' className='arrrow--icon' />
           </div>
@@ -35,7 +58,7 @@ export default function Home() {
             unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
             totam rem aperiam.Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div className='partneSection--text'>
+          <div>
             <p>ABOUT US</p>
             <Image src={arrow} alt='arrow pointed right' className='arrrow--icon' />
           </div>
@@ -50,6 +73,36 @@ export default function Home() {
             <Image src={microsoft} alt='microsoft' className='microsoft brand' />
           </div>
         </div>
+      </div>
+
+      <div className='services--section'>
+        <div className='services--section1'>
+          <p>WHAT MAKES US UNIQUE</p>
+          <p>Tailored services that propel success</p>
+        </div>
+
+        <div className='services--section2'>
+          {
+            services.map((service) => (
+              <div>
+                <Image src={service.image} alt={service.title} className='services--section2--img' />
+                <p className='services--section2--para1'>{service.title}</p>
+                <hr />
+                <p className='services--section2--para2'>
+                  {service.body}
+                </p>
+                <div>
+                  <p>LEARN MORE</p>
+                  <Image src={arrow} alt='arrow pointed right' className='arrrow--icon' />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div className='portfolio--section'>
+
       </div>
     </main>
   )
