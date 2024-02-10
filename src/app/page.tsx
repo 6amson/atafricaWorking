@@ -117,22 +117,28 @@ export default function Home() {
       </div>
 
       <div className='stats--section'>
-          <div>
-            <p>$700m+</p>
-            <hr/>
-            <p>Funding raised</p>
-          </div>
-          <div>
-            <p>32</p>
-            <hr/>
-            <p>Successful exits</p>
-          </div>
-          <div>
-            <p>56</p>
-            <hr/>
-            <p>Jobs created</p>
-          </div>
+        <div>
+          <p>$700m+</p>
+          <hr />
+          <p>Funding raised</p>
+        </div>
+        <div>
+          <p>32</p>
+          <hr />
+          <p>Successful exits</p>
+        </div>
+        <div>
+          <p>56</p>
+          <hr />
+          <p>Jobs created</p>
+        </div>
       </div>
+
+      <div className='prefooter'>
+        <p>Partner with ATAfrica today and become a
+          part of the next generation of innovations</p>
+      </div>
+      <button>PARTNER WITH US</button>
     </main>
   )
 }
