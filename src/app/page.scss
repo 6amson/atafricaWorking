@@ -272,7 +272,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background: url('../../assets/stats--bg.jpg');
+  background-image: url("../../assets/stats--bg.jpg"); 
+  background-color: rgba(58, 58, 58, 0.85);
+  background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -452,7 +454,7 @@
   }
 
   .stats--section {
-    padding: 100px 16px;
+    padding: 24px 16px;
 
     div {
       p:first-child {
@@ -546,8 +548,6 @@
 
     div {
       width: fit-content;
-
-      
     }
   }
 }
