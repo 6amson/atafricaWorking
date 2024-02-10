@@ -9,6 +9,9 @@ import microsoft from '../../assets/microsoft.svg';
 import serviceLogo1 from '../../assets/services_logo1.svg';
 import serviceLogo2 from '../../assets/services_logo2.svg';
 import serviceLogo3 from '../../assets/services_logo3.svg';
+import mockup1 from '../../assets/Ft9ja--mockup.svg';
+import mockup2 from '../../assets/ft9ja--mockup--details.svg';
+
 
 
 
@@ -105,8 +108,39 @@ export default function Home() {
       </div>
 
       <div className='portfolio--section'>
+        <p>PORTFOLIO</p>
+        <p>Featured Startups</p>
+        <div>
+          {/* <Image src={mockup1} alt='ft9ja mockup' className='ft9ja--mockup1' />
+          <Image src={mockup2} alt='ft9ja mockup details' className='ft9ja--mockup2' /> */}
+          <div className='ft9ja--mockup1' ><Image src={mockup1} alt='ft9ja mockup' className='ft9ja--mockup1img' /></div>
+          <div className='ft9ja--mockup2'><Image src={mockup2} alt='ft9ja mockup details' className='ft9ja--mockup2img' /> </div>
+        </div>
+      </div>
 
+      <div className='stats--section'>
+          <div>
+            <p>$700m+</p>
+            <hr/>
+            <p>Funding raised</p>
+          </div>
+          <div>
+            <p>32</p>
+            <hr/>
+            <p>Successful exits</p>
+          </div>
+          <div>
+            <p>56</p>
+            <hr/>
+            <p>Jobs created</p>
+          </div>
       </div>
     </main>
   )
 }
+
+
+
+
+{/* <Image src={mockup1} alt='ft9ja mockup' className='ft9ja--mockup1' />
+          <Image src={mockup2} alt='ft9ja mockup details' className='ft9ja--mockup2' /> */}
