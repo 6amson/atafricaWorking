@@ -1,0 +1,338 @@
+@import "../style/variables.scss";
+
+.hero--profile--container {
+    min-height: calc(100vh - 107px);
+    font-family: $mainFont;
+    background: black;
+    position: relative;
+    color: white;
+    padding: 160px 100px;
+
+    p {
+        z-index: 2;
+        width: 50%;
+    }
+
+    p:first-child {
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 96px;
+        margin-bottom: 16px;
+    }
+
+    p:nth-child(2) {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .heropage--bg {
+        position: absolute;
+        height: 500px;
+        width: 400px;
+        right: 0;
+        top: 0;
+
+        .heropage--image {
+            z-index: 1;
+        }
+    }
+}
+
+.industry--section {
+    padding: 0px 100px;
+
+    .industry--section1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        font-family: $mainFont;
+        margin-bottom: 80px;
+
+
+        div {
+            position: relative;
+
+            p {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 30px;
+                color: #262626;
+                margin-bottom: 8px;
+            }
+
+            select {
+                font-family: $mainFont;
+                border: none;
+                border-bottom: solid 1px grey;
+                width: 250px;
+                background: transparent;
+
+                option {
+                    font-size: 16px;
+                }
+            }
+
+        }
+
+        .industry--section1--input {
+            margin-top: 30px;
+
+            input {
+                position: relative;
+                border: none;
+                border-bottom: solid 1px grey;
+                width: 250px;
+                background: none;
+                padding: 6px 0;
+                padding-right: 16px;
+                outline: none;
+                font-family: $mainFont;
+                transition: border-color .3s ease-out;
+
+                &:focus {
+                    border-color: #FC700A;
+                    transition: border-color .3s ease-out;
+                }
+
+                ::placeholder {
+                    font-size: 18px;
+                    line-height: 30px;
+                    font-family: $mainFont;
+                }
+
+            }
+
+            .searchIcon {
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                bottom: 6px;
+                right: 0;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .industry--section2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 80px;
+
+        .industry--section2--container {
+            width: 470px;
+            background: #fafafa;
+            padding: 16px;
+            font-family: $mainFont;
+
+
+            .industry--section2--iconDiv {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 0;
+                margin-bottom: 24px;
+            }
+
+            .startup--icon {
+                margin-bottom: 48px;
+            }
+
+            .industry--section2--para1 {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 30px;
+                margin-bottom: 24px;
+            }
+
+            hr {
+                margin-bottom: 24px;
+            }
+
+            .industry--section2--learnmore {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                p {
+                    color: #FC700A;
+                    margin-right: 8px;
+                    transition: margin-right .3s ease-out;
+
+
+                    &:hover {
+                        color: #FC700A;
+                        margin-right: 16px;
+                        transition: margin-right .3s ease-out;
+                    }
+                }
+            }
+        }
+    }
+
+    .industry--section2--finalpara {
+        font-family: $mainFont;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 160px;
+
+        p {
+            padding: 8px 24px;
+            border: solid 1px black;
+            width: 130px;
+            background: #ADADAD;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 856px) {
+    .hero--profile--container {
+        padding: 80px 16px;
+
+        p {
+            width: 80%;
+        }
+
+        p:first-child {
+            font-size: 32px;
+            line-height: 48px;
+        }
+
+        p:nth-child(2) {
+            font-size: 16px;
+            line-height: 26px;
+        }
+
+        .heropage--bg {
+            position: absolute;
+            height: 350px;
+            width: 200px;
+            right: 0;
+            top: 0;
+
+            .heropage--image {
+                z-index: 1;
+            }
+        }
+    }
+
+
+    .industry--section {
+        padding: 0 16px;
+
+        .industry--section1 {
+            margin-bottom: 32px;
+
+
+            div {
+                margin-bottom: 30px;
+
+                p {
+                    font-size: 16px;
+                    line-height: 26px;
+                }
+
+                select {
+                    width: 250px;
+
+                    option {
+                        font-size: 14px;
+                    }
+                }
+
+            }
+
+            div:nth-child(3) {
+                margin-bottom: 0;
+            }
+
+            .industry--section1--input {
+
+                input {
+                    width: 250px;
+                }
+            }
+        }
+
+        .industry--section2 {
+            margin-bottom: 32px;
+
+            .industry--section2--container {
+
+
+
+                .industry--section2--iconDiv {
+                    p {
+                        font-size: 14px;
+                    }
+                }
+
+
+                .startup--icon {
+                    margin-bottom: 48px;
+                }
+
+                .industry--section2--para1 {
+                    font-size: 16px;
+                    line-height: 26px;
+                    margin-bottom: 24px;
+                }
+
+                .industry--section2--learnmore {
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 480px) {
+    .industry--section {
+
+        .industry--section1 {
+
+
+            div {
+                width: 100%;
+
+                select {
+                    width: 100%;
+                }
+
+            }
+
+            .industry--section1--input {
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .industry--section2 {
+
+            .industry--section2--container {
+                width: 100%;
+            }
+        }
+
+    }
+
+}

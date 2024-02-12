@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Header from './header/Header'
+import Header from './style/components/header/Header'
 import "./style/global.scss"
 
 export const metadata: Metadata = {

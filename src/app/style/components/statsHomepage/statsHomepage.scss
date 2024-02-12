@@ -1,0 +1,73 @@
+@import "../../../style/variables.scss";
+
+
+.stats--section {
+    width: 100%;
+    padding: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-image: url("../../../../../assets/stats--bg.jpg");
+    background-color: rgba(58, 58, 58, 0.85);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: $mainFont;
+    color: white;
+
+    div {
+        margin-bottom: 16px;
+
+        p:first-child {
+            font-weight: 500;
+            font-size: 90px;
+            line-height: 135px;
+            margin-bottom: 16px;
+        }
+
+        hr {
+            margin-bottom: 16px;
+            height: 1.5px;
+            background: rgb(144, 144, 144);
+        }
+
+        p:nth-child(2) {
+            font-weight: 400px;
+            font-size: 22px;
+            line-height: 34px;
+        }
+    }
+}
+
+
+@media (max-width: 856px) {
+    .stats--section {
+        padding: 24px 16px;
+
+        div {
+            p:first-child {
+                font-size: 52px;
+                line-height: 78px;
+            }
+
+            p:nth-child(2) {
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+
+    .stats--section {
+        display: block;
+
+        div {
+            width: fit-content;
+        }
+    }
+}

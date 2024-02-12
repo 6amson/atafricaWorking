@@ -1,7 +1,7 @@
 import "./header.scss"
 import Image from "next/image"
-import Logo from "../../../assets/logoAtafrica.svg"
-import Menu from "../../../assets/menu_icon.svg"
+import Logo from "../../../../../assets/logoAtafrica.svg"
+import Menu from "../../../../../assets/menu_icon.svg"
 
 
 export default function Header() {
