@@ -187,6 +187,15 @@
             width: 130px;
             background: #ADADAD;
             cursor: pointer; 
+            transition: border .3s ease-out, color .3s ease-in, background .3s ease-in-out;
+
+
+            &:hover{
+                border:solid 1px #FC700A;
+                color: whitesmoke;
+                background: black;
+                transition: border .3s ease-out, color .3s ease-in, background .3s ease-in-out;
+            }
         }
     }
 }
