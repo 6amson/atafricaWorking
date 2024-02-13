@@ -103,7 +103,7 @@ export default function About() {
             </div>
             <div className="about--culturepage">
                 <p className="about--culturepage--para1">Our Culture</p>
-                <p className="about--culturepage--para2">The ATAfrica'n Culture</p>
+                <p className="about--culturepage--para2">The ATAfrica&apos;n Culture</p>
                 <div className="about--culturepage--media">
                     {
                         Culture.map((culture) => (
