@@ -47,6 +47,7 @@ export default function Profile() {
         },
 
     ]
+    
     return (
         <main className="profile--container">
             <div className="hero--profile--container">

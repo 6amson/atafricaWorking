@@ -1,0 +1,219 @@
+@import "../style/variables.scss";
+
+.about--heropage {
+    min-height: calc(100vh - 107px);
+    font-family: $mainFont;
+    background: black;
+    position: relative;
+    color: white;
+    padding: 160px 100px;
+
+    p:first-child {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 26px;
+        letter-spacing: 0.08em;
+        margin-bottom: 16px;
+    }
+
+    p:nth-child(2) {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 96px;
+        margin-bottom: 16px;
+    }
+
+    p:nth-child(3),
+    p:nth-child(4) {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 48px;
+        margin-bottom: 32px;
+    }
+
+    p:nth-child(4) {
+        margin-bottom: 0;
+    }
+}
+
+.about--culturepage {
+    padding: 160px 100px;
+    background: white;
+    color: black;
+    font-family: $mainFont;
+
+    .about--culturepage--para1 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 26px;
+        letter-spacing: 0.08em;
+    }
+
+    .about--culturepage--para2 {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 96px;
+        margin-bottom: 16px;
+    }
+
+    .about--culturepage--media {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+
+
+        div {
+            width: fit-content;
+
+            p:nth-child(2) {
+                font-size: 32px;
+                font-weight: 600;
+                line-height: 48px;
+                letter-spacing: 0.04em;
+            }
+
+            p:nth-child(3) {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 30px;
+                letter-spacing: 0.08em;
+            }
+        }
+    }
+}
+
+
+.about--teampage {
+    padding: 0px 100px;
+    background: white;
+    color: black;
+    font-family: $mainFont;
+
+
+    .about--teampage--para1 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 26px;
+        letter-spacing: 0.08em;
+    }
+
+    .about--teampage--para2 {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 96px;
+        margin-bottom: 16px;
+    }
+
+    .about--teampage--display {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        div {
+            text-align: center;
+            min-width: 350px;
+            background: rgb(250, 250, 250);
+            margin-bottom: 24px;
+            padding: 16px;
+
+            p:nth-child(2) {
+                font-size: 22px;
+                font-weight: 600;
+                line-height: 34px;
+                letter-spacing: 0.04em;
+                margin-bottom: 16px;
+            }
+
+            p:nth-child(3) {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 30px;
+                letter-spacing: 0.08em;
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 800px) {
+    .about--heropage {
+        padding: 80px 16px;
+
+        p:nth-child(2) {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 48px;
+        }
+
+        p:nth-child(3),
+        p:nth-child(4) {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 30px;
+            letter-spacing: 0.08em;
+        }
+    }
+
+    .about--culturepage {
+        padding: 32px 16px;
+
+        .about--culturepage--para2 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 48px;
+        }
+
+        .about--culturepage--media {
+
+            div {
+                width: 100%;
+                margin-bottom: 24px;
+
+                .culture--photo {
+                    width: inherit;
+                }
+
+                p:nth-child(2) {
+                    font-size: 22px;
+                    font-weight: 600;
+                    line-height: 34px;
+                }
+
+                p:nth-child(3) {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+
+
+    .about--teampage {
+        padding: 0px 16px;
+
+        .about--teampage--para2 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 48px;
+        }
+
+        .about--teampage--display {
+            div {
+                min-width: 100%;
+            }
+        }
+    }
+
+
+}
