@@ -26,13 +26,25 @@
         gap: 32px;
         place-items: start;
         flex-wrap: wrap;
-
         justify-content: center;
+        transition: gap .3s ease-in-out;
+
+
+        &:hover {
+            gap: 16px;
+            transition: gap .3s ease-in-out;
+
+            .ft9ja--mockup1 {
+                transform: scale(1.02);
+                transition: transform .3s ease-in-out;
+            }
+        }
 
         .ft9ja--mockup1 {
             overflow: hidden;
             min-width: fit-content;
             height: 594px;
+            transition: transform .3s ease-in-out;
         }
 
         .ft9ja--mockup2 {

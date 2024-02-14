@@ -25,6 +25,13 @@
         border-left: #FC700A solid 2px;
         border-right: #FC700A solid 2px;
         cursor: pointer;
+        transition: border-top .3s ease-in, border-bottom .3s ease-in-out;
+
+        &:hover {
+            border-top: #FC700A solid 2px;
+            border-bottom: #FC700A solid 2px;
+            transition: border-top .3s ease-in, border-bottom .3s ease-in-out;
+        }
     }
 }
 

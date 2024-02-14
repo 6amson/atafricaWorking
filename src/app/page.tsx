@@ -1,4 +1,7 @@
-import Image from 'next/image'
+'use client'
+
+import Image from 'next/image';
+import { useState } from 'react';
 import './page.scss'
 import arrow from '../../assets/ri_arrow-up-line.svg';
 import adobe from '../../assets/adobe.svg';
@@ -13,12 +16,15 @@ import FeatureHomepage from './style/components/featureHomepage/featureHomepage'
 import StatsHomepage from './style/components/statsHomepage/statsHomepage';
 import Prefooter from './style/components/prefooterHomepage/prefooterHomepage';
 import Footer from './style/components/footer/footer';
+import background from "../../assets/homepage_background2.svg";
 
 
 
 
 
 export default function Home() {
+
+  const [brands, setBrands] = useState([adobe, salesforce, airbnb, google, microsoft]);
 
   const services = [
     {
@@ -45,6 +51,7 @@ export default function Home() {
     <main className="container">
       <div className="main">
         <div className='main--subcontainer'>
+          <Image src={background} alt='background image' className='homepage--background' />
           <h1>Next-Gen <span>Innovations</span> Forged Here</h1>
           <p>Step into the future with ATAfrica, where next-gen
             ideas meet boundless possibilities. Join us on the
@@ -75,11 +82,21 @@ export default function Home() {
         <div className='brand--section2'>
           <p>OUR PARTNERS</p>
           <div>
-            <Image src={adobe} alt='adobe svg' className='adobe brand' />
-            <Image src={salesforce} alt='saleforce svg' className='salesforce brand' />
-            <Image src={airbnb} alt='airbnb svg' className='airbnb brand' />
-            <Image src={google} alt='google' className='google brand' />
-            <Image src={microsoft} alt='microsoft' className='microsoft brand' />
+            <div className='primary--brandsection'>
+              <Image src={adobe} alt='adobe svg' className='adobe brand' />
+              <Image src={salesforce} alt='saleforce svg' className='salesforce brand' />
+              <Image src={airbnb} alt='airbnb svg' className='airbnb brand' />
+              <Image src={google} alt='google' className='google brand' />
+              <Image src={microsoft} alt='microsoft' className='microsoft brand' />
+            </div>
+            
+            <div className='secondary--brandsection'>
+              <Image src={adobe} alt='adobe svg' className='adobe brand' />
+              <Image src={salesforce} alt='saleforce svg' className='salesforce brand' />
+              <Image src={airbnb} alt='airbnb svg' className='airbnb brand' />
+              <Image src={google} alt='google' className='google brand' />
+              <Image src={microsoft} alt='microsoft' className='microsoft brand' />
+            </div>
           </div>
         </div>
       </div>

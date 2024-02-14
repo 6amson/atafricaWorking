@@ -217,3 +217,18 @@
 
 
 }
+
+@media(max-width: 480px) {
+
+    .about--heropage {
+
+    p:nth-child(3),
+    p:nth-child(4) {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0.08em;
+    }
+}
+
+}
