@@ -48,11 +48,14 @@
       .logo {
          height: 35.44px;
          width: 100px;
+         margin-left: 0;
       }
 
       .menu {
+         position: relative;
          width: 32px;
          height: 32px;
+         display: inline-block;
       }
 
       div {
