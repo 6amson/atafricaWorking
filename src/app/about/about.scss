@@ -62,25 +62,75 @@
         flex-wrap: wrap;
 
 
-
-        div {
+        .culture--media--div {
+            cursor: pointer;
             width: fit-content;
+            // background: green;
 
-            p:nth-child(2) {
+            div {
+                width: fit-content;
+                // background: red;
+            }
+
+            p:nth-child(1) {
                 font-size: 32px;
                 font-weight: 600;
                 line-height: 48px;
                 letter-spacing: 0.04em;
             }
 
-            p:nth-child(3) {
+            p:nth-child(2) {
                 font-size: 18px;
                 font-weight: 400;
                 line-height: 30px;
                 letter-spacing: 0.08em;
             }
         }
+
+
     }
+
+    // .about--culturepage--media:hover .culture--media--div{
+    //     background: cyan;
+    //     // width: 100px;
+
+    //     // .culture--photo{
+    //     //     width: 60px;
+    //     // }
+    // }
+
+    // .culture--media--div:hover {
+    //     background: chartreuse;
+    //     width: fit-content;
+
+        // .culture--photo {
+        //     width: 100%;
+        // }
+
+       
+    // }
+
+    // .about--culturepage--media .culture--media--div:hover  {
+    //     background: orange;
+
+    //     .about--culturepage--media{
+    //         background: greenyellow;
+    //     }
+    // }
+
+    // .culture--media--div:has(+ .culture--media--div:hover) {
+    //     background: blue;
+    // }
+
+    // .culture--media--div:has(~ :not(div:hover))  {
+    //     background: blue;
+    // }
+
+    // .culture--media--div:hover~.culture--media--div:not(:hover) {
+    //     background: #44c47e;
+    // }
+
+
 }
 
 
@@ -222,13 +272,13 @@
 
     .about--heropage {
 
-    p:nth-child(3),
-    p:nth-child(4) {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 26px;
-        letter-spacing: 0.08em;
+        p:nth-child(3),
+        p:nth-child(4) {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: 0.08em;
+        }
     }
-}
 
 }

@@ -90,13 +90,13 @@ export default function Home() {
               <Image src={microsoft} alt='microsoft' className='microsoft brand' />
             </div>
             
-            <div className='secondary--brandsection'>
+            {/* <div className='secondary--brandsection'>
               <Image src={adobe} alt='adobe svg' className='adobe brand' />
               <Image src={salesforce} alt='saleforce svg' className='salesforce brand' />
               <Image src={airbnb} alt='airbnb svg' className='airbnb brand' />
               <Image src={google} alt='google' className='google brand' />
               <Image src={microsoft} alt='microsoft' className='microsoft brand' />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

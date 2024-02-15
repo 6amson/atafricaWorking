@@ -107,10 +107,12 @@ export default function About() {
                 <div className="about--culturepage--media">
                     {
                         Culture.map((culture) => (
-                            <div key={culture.id}>
+                            <div className="culture--media--div" key={culture.id}>
                                 <Image src={culture.image} className="culture--photo" alt="about--culture" />
-                                <p>{culture.title}</p>
-                                <p>{culture.body}</p>
+                                <div>
+                                    <p>{culture.title}</p>
+                                    <p>{culture.body}</p>
+                                </div>
                             </div>
                         ))
                     }
@@ -133,8 +135,8 @@ export default function About() {
                 </div>
             </div>
 
-            <Prefooter/>
-            <Footer/>
+            <Prefooter />
+            <Footer />
         </main>
     )
 }

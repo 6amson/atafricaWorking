@@ -9,7 +9,7 @@ export default function Header() {
         <div className="header">
             <Image className="logo" src={Logo} alt="ATAfrica logo"/>
             <Image className="menu" src={Menu} alt="menu logo" />
-            <div></div>
+            {/* <div></div> */}
         </div>
     )
 }
