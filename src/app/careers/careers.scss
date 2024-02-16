@@ -73,7 +73,6 @@
 }
 
 .open--position--header {
-    background: rgb(230, 230, 231);
     padding: 200px 160px 80px 200px;
     font-family: $mainFont;
 
@@ -240,6 +239,7 @@
         text-align: center;
 
         button {
+            cursor: pointer;
             font-size: 16px;
             margin-top: 48px;
             font-weight: 600;
@@ -248,6 +248,8 @@
             padding: 8px 24px;
             background: #ADADAD;
             border: none;
+            text-decoration: none;
+            color: black;
         }
     }
 }
@@ -393,23 +395,7 @@
                 margin-bottom: 32px;
 
 
-                input {
-                    position: relative;
-                    border: none;
-                    border-bottom: solid 1px grey;
-                    width: 100%;
-                    background: none;
-                    padding: 6px 0;
-                    padding-right: 16px;
-                    outline: none;
-                    font-family: $mainFont;
-                    font-size: 16px;
-                    transition: border-color .3s ease-out;
-
-                    &:focus {
-                        border-color: #FC700A;
-                        transition: border-color .3s ease-out;
-                    }
+                input {                  
 
                     ::placeholder {
                         font-size: 18px;
@@ -417,16 +403,6 @@
                         font-family: $mainFont;
                     }
 
-                }
-
-                .searchIcon {
-                    position: absolute;
-                    width: 15px;
-                    height: 15px;
-                    bottom: 6px;
-                    right: 0;
-                    cursor: pointer;
-                    opacity: .7;
                 }
             }
 
@@ -442,16 +418,7 @@
                 }
 
                 select {
-                    width: 100% !important;
-                    font-family: $mainFont;
-                    border: none;
-                    border-bottom: solid 1px grey;
-                    width: 250px;
-                    background: transparent;
-
-                    option {
-                        font-size: 16px;
-                    }
+                    width: 100%;
                 }
             }
         }
