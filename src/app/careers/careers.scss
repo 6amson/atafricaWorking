@@ -156,6 +156,7 @@
                 background: transparent;
                 color: black;
                 outline: none;
+                font-size: 16px;
 
                 option {
                     font-size: 16px;
@@ -396,9 +397,11 @@
             .open--position--header--div1--input {
                 margin-top: 30px;
                 margin-bottom: 32px;
+                width: 100%;
 
 
-                input {                  
+                input {
+                    width: 100%;
 
                     ::placeholder {
                         font-size: 18px;
