@@ -24,7 +24,7 @@ import background from "../../assets/homepage_background2.svg";
 
 export default function Home() {
 
-  const [brands, setBrands] = useState([adobe, salesforce, airbnb, google, microsoft]);
+  // const [brands, setBrands] = useState([adobe, salesforce, airbnb, google, microsoft]);
 
   const services = [
     {
