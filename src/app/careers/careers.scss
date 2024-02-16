@@ -358,15 +358,6 @@
                     font-size: 16px;
                     font-weight: 600;
                     line-height: 28px;
-                    letter-spacing: 0.05em;
-                    color: #FC700A;
-                    cursor: pointer;
-                    transition: margin-right .3s ease-out;
-
-                    &:hover {
-                        margin-right: 16px;
-                        transition: margin-right .3s ease-out;
-                    }
                 }
             }
         }
@@ -541,7 +532,7 @@
 
 @media (max-width: 470px) {
     .main {
-
+height: fit-content;
 
         .homepage--text {
             width: 70%;

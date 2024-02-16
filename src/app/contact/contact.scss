@@ -1,2 +1,249 @@
 @import "../style/variables.scss";
 
+.main {
+    padding: 80px 160px;
+
+    .main--sub1 {
+        font-family: $mainFont;
+
+        p:first-child {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 96px;
+        }
+
+        p:last-child {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 0.08em;
+            opacity: .8;
+            margin-top: 8px;
+            margin-bottom: 32px;
+        }
+    }
+
+    .main--sub2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-family: $mainFont;
+        gap: 16px;
+
+        .main--sub2--div {
+            background: white;
+            padding: 24px 50px;
+            padding-left: 24px;
+            border-radius: 8px;
+            max-width: 400px;
+
+            div {
+                display: flex;
+                align-items: center;
+
+                p {
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 30px;
+                    letter-spacing: 0.08em;
+                    margin-left: 8px;
+                }
+            }
+
+            .main--sub2--para1 {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 26px;
+                letter-spacing: 0.08em;
+                text-align: left;
+                opacity: .8;
+            }
+
+            .main--sub2--para2 {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 26px;
+                letter-spacing: 0.08em;
+            }
+
+            .main--sub2--para2,
+            .main--sub2--para1 {
+                margin-left: 32px;
+            }
+        }
+
+    }
+}
+
+
+.careers--input--container {
+    padding: 80px 270px;
+    font-family: $mainFont;
+
+    p {
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 60px;
+        letter-spacing: 0.04em;
+        margin-bottom: 32px;
+    }
+
+    form {
+
+
+        .careers--input--container--div {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            div {
+                margin-bottom: 32px;
+
+                input {
+                    min-width: 370px;
+                    border: solid 1px #C5C5C5;
+                    padding: 8px 16px 8px 16px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    outline: none;
+                    transition: border-color .3s ease-out;
+
+                    &:focus {
+                        border-color: #FC700A;
+                        transition: border-color .3s ease-out;
+                    }
+                }
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 0.08em;
+            color: #262626;
+        }
+
+        #message {
+            width: 100%;
+            height: 101px;
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: solid 1px #C5C5C5;
+            font-family: $mainFont;
+            outline: none;
+            transition: border-color .3s ease-out;
+
+            &:focus {
+                border-color: #FC700A;
+            }
+
+
+            ::placeholder {
+                font-family: $mainFont;
+                font-size: 16px;
+            }
+        }
+
+        #submit--div {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            margin-top: 32px;
+        }
+
+
+        #submitButton {
+            font-family: $mainFont;
+            padding: 8px 24px;
+            color: white;
+            border: none;
+            border-left: solid 1px #FC700A;
+            border-right: solid 1px #FC700A;
+            background: black;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+@media (max-width: 1000px) {
+    .careers--input--container {
+        padding: 80px 160px;
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+    .careers--input--container {
+        padding: 80px 160px;
+
+        form {
+
+
+            .careers--input--container--div {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                div {
+                    margin-bottom: 32px;
+                    width: 100%;
+
+                    input {
+                        min-width: 100%;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+    .main {
+        padding: 32px 16px;
+
+        .main--sub1 {
+            font-family: $mainFont;
+
+            p:first-child {
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 48px;
+            }
+
+            p:last-child {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 26px;
+                letter-spacing: 0.08em;
+            }
+        }
+
+    }
+
+    .careers--input--container {
+        padding: 32px 16px;
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+            letter-spacing: 0.08em;
+        }
+
+        form {}
+    }
+}
