@@ -80,7 +80,7 @@ export default function Careers() {
         <main>
             <div className="main">
                 <div className="homepage--text">
-                    <p>Shape Tomorrow's Success with ATAfrica</p>
+                    <p>Shape Tomorrow&apos;s Success with ATAfrica</p>
                     <p>Discover Opportunities That Propel Your Career Forward</p>
                     <div>
                         <p>EXPLORE OPEN ROLES </p>
