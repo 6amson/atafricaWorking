@@ -14,15 +14,88 @@
       margin-left: 100px;
    }
 
-   .menu {
+   .logoDiv {
       // margin-left: 509px;
       cursor: pointer;
-      // background: red;
       width: 100%;
       position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
+      // padding: 4px 0;
+      // background: red;
+
+      .logodivv {
+         width: 32px;
+         height: 28px;
+         position: relative;
+         // background: green;
+         padding: 4px;
+         cursor: pointer;
+         // transition: width .3s ease-in-out, margin-left .3s ease-in;
+
+
+         div {
+            border: solid 2px #262626;
+            margin-bottom: 6px;
+            width: 100%;
+            border-radius: 18px;
+            // transition: width .3s ease-in-out, margin-left .3s ease-in;
+
+         }
+
+         div:first-child {
+            width: 70%;
+            margin-left: 10%;
+            transition: width .3s ease-in-out, margin-left .4s ease-in;
+         }
+
+         div:last-child {
+            width: 70%;
+            margin-left: 25%;
+            margin-bottom: 0;
+            margin-top: 4.5px;
+            transition: width .3s ease-in-out, margin-left .4s ease-in;
+         }
+
+
+         &:hover {
+            div:first-child {
+               width: 100%;
+               margin-left: 0;
+               transition: width .3s ease-in-out, margin-left .4s ease-in;
+            }
+
+            div:last-child {
+               width: 100%;
+               margin-left: 0;
+               transition: width .3s ease-in-out, margin-left .4s ease-in;
+            }
+         }
+      }
+   }
+}
+
+
+.header--menu--options {
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+   font-family: $mainFont;
+   font-size: 24px;
+   font-weight: 600;
+   padding: 32px 100px;
+   color: #ADADAD;
+   transition: color .3s ease-in-out;
+
+
+   P {
+      cursor: pointer;
+
+      &:hover {
+         color: #fb974f;
+         transition: color .3s ease-in-out;
+      }
    }
 }
 
@@ -51,17 +124,21 @@
          margin-left: 0;
       }
 
-      .menu {
+      .logoDiv {
          position: relative;
          width: 32px;
          height: 32px;
          display: inline-block;
       }
 
-      div {
-         display: none;
-         width: 30px;
-         height: 30px;
-      }
+      // div {
+      //    display: none;
+      //    width: 30px;
+      //    height: 30px;
+      // }
+   }
+
+   .header--menu--options {
+      padding: 16px 16px;
    }
 }
