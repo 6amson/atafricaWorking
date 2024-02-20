@@ -54,9 +54,9 @@ export default function Header() {
                 className={isMenuHovered ? "header--menu--options" : "inactiveHeaderOptions"}
                 ref={menuRef}
                 style={{
-                    // opacity: isMenuHovered ? 1 : 0,
+                    opacity: isMenuHovered ? 1 : 0,
                     // height: isMenuHovered ? "auto" : 0,
-                    display: isMenuHovered ? "flex" : 'none',
+                    display: isMenuHovered ? "flex" : 'flex',
                     // transition: "height 1s ease-in",
                 }}
             >

@@ -142,14 +142,12 @@
          transition: color .3s ease-in-out;
       }
    }
-
-   .inactiveHeaderOptions {
-      height: 0;
-      animation: fadeOutAnimation .5s;
-   }
 }
 
-
+.inactiveHeaderOptions {
+   height: 0;
+   animation: fadeOutAnimation .5s;
+}
 
 
 @media (max-width: 980px) {
