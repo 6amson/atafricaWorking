@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './page.scss'
 import arrow from '../../assets/ri_arrow-up-line.svg';
 import adobe from '../../assets/adobe.svg';
@@ -17,6 +17,8 @@ import StatsHomepage from './style/components/statsHomepage/statsHomepage';
 import Prefooter from './style/components/prefooterHomepage/prefooterHomepage';
 import Footer from './style/components/footer/footer';
 import background from "../../assets/homepage_background2.svg";
+import gsap from 'gsap';
+import { TextPlugin } from "gsap/TextPlugin";
 
 
 
@@ -25,6 +27,21 @@ import background from "../../assets/homepage_background2.svg";
 export default function Home() {
 
   // const [brands, setBrands] = useState([adobe, salesforce, airbnb, google, microsoft]);
+  const homepageWords = ['Ideas', 'Breakthroughs', 'Innovations', 'Ventures'];
+  gsap.registerPlugin(TextPlugin);
+
+  useEffect(() => {
+
+    let tlMaster = gsap.timeline({ repeat: -1 });
+
+    homepageWords.forEach((word) => {
+
+      let tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
+
+      tlText.to('#animated--type--text', { duration: 2, text: word });
+      tlMaster.add(tlText);
+    })
+  }, [])
 
   const services = [
     {
@@ -52,7 +69,7 @@ export default function Home() {
       <div className="main">
         <div className='main--subcontainer'>
           <Image src={background} alt='background image' className='homepage--background' />
-          <h1>Next-Gen <span>Innovations</span> Forged Here</h1>
+          <h1>Next-Gen <span id='animated--type--text'></span> Forged Here</h1>
           <p>Step into the future with ATAfrica, where next-gen
             ideas meet boundless possibilities. Join us on the
             entrepreneurial journey of a lifetime, shaping tomorrow&apos;s
@@ -89,7 +106,7 @@ export default function Home() {
               <Image src={google} alt='google' className='google brand' />
               <Image src={microsoft} alt='microsoft' className='microsoft brand' />
             </div>
-            
+
             {/* <div className='secondary--brandsection'>
               <Image src={adobe} alt='adobe svg' className='adobe brand' />
               <Image src={salesforce} alt='saleforce svg' className='salesforce brand' />

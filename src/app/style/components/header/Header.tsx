@@ -6,17 +6,28 @@ import React, { useState, useRef, useEffect } from "react";
 import Logo from "../../../../../assets/logoAtafrica.svg";
 import Menu from "../../../../../assets/menu_icon.svg";
 import useOnclickOutside from "react-cool-onclickoutside";
+import gsap from "gsap";
+import { Flip } from "gsap/Flip";
 
 
 export default function Header() {
     const [isMenuHovered, setIsMenuHovered] = useState(false);
+    gsap.registerPlugin(Flip);
+    // const menuOptions = gsap.utils.toArray(".header--menu--options");
 
     const menuRef = useOnclickOutside(() => {
         setIsMenuHovered(false);
     });
 
+
+    const handlemenuclick = (item: any) => {
+        // setIsMenuHovered(!isMenuHovered);
+        setIsMenuHovered(prevState => !prevState);
+
+    }
+
     useEffect(() => {
-        
+
     }, []);
 
 
@@ -25,10 +36,12 @@ export default function Header() {
         <main>
             <div className="header">
                 <Image className="logo" src={Logo} alt="ATAfrica logo" />
+                {/* <p>{isMenuHovered ? 'YES' : 'NO'}</p> */}
                 <div className="logoDiv">
                     <div className="logodivv"
                         onMouseOver={() => setIsMenuHovered(true)}
-                        onClick={() => setIsMenuHovered(prevState => !prevState)}
+                        onClick={handlemenuclick}
+                        ref={menuRef}
                     >
                         <div />
                         <div />
@@ -37,13 +50,14 @@ export default function Header() {
                 </div>
             </div>
             <div
-                className={`header--menu--options ${isMenuHovered ? "show" : "hide"}`}
+                // className={`header--menu--options ${isMenuHovered ? "show" : "hide"}`}
+                className={isMenuHovered ? "header--menu--options" : "inactiveHeaderOptions"}
                 ref={menuRef}
                 style={{
                     // opacity: isMenuHovered ? 1 : 0,
-                    // // height: isMenuHovered ? "auto" : 0,
+                    // height: isMenuHovered ? "auto" : 0,
                     display: isMenuHovered ? "flex" : 'none',
-                    transition: "display 0.3s ease-in,"
+                    // transition: "height 1s ease-in",
                 }}
             >
                 <p>Profile</p>
