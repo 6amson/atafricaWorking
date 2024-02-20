@@ -26,20 +26,9 @@ export default function Header() {
         <main>
             <div className="header">
                 <Image className="logo" src={Logo} alt="ATAfrica logo" />
-                {/* <div className="logoDiv">
-                    <Image
-                        className="menu"
-                        src={Menu}
-                        alt="menu logo"
-                        onMouseOver={() => setIsMenuHovered(true)}
-                        onClick={handleClickMenu}
-                    />
-                </div> */}
-
                 <div className="logoDiv">
                     <div className="logodivv"
                         onMouseOver={() => setIsMenuHovered(true)}
-                        onClick={handleClickMenu}
                     >
                         <div />
                         <div />
@@ -49,7 +38,7 @@ export default function Header() {
             </div>
             <div
                 className={`header--menu--options ${isMenuHovered ? "show" : "hide"}`}
-                // ref={menuRef}
+                ref={menuRef}
                 style={{
                     opacity: isMenuHovered ? 1 : 0,
                     // height: isMenuHovered ? "auto" : 0,
