@@ -27,6 +27,8 @@
   display: grid;
   place-items: center;
   position: relative;
+  height: fit-content;
+  // background: red;
 
 
   h1 {
@@ -34,6 +36,7 @@
     font-weight: 300;
     text-align: center;
     margin-bottom: 16px;
+    // background: red;
 
 
     span {
@@ -75,6 +78,11 @@
       font-weight: 600;
       margin-right: 8px;
     }
+  }
+
+  #animated--type--text {
+    display: block;
+    min-height: 100px;
   }
 }
 
@@ -345,6 +353,11 @@
       width: inherit;
       font-size: 16px;
       line-height: 26px;
+    }
+
+    #animated--type--text {
+      display: block;
+      min-height: 48px;
     }
 
   }
