@@ -17,24 +17,19 @@
    .logoDiv {
       position: relative;
       z-index: 2;
-      // margin-left: 509px;
       cursor: pointer;
       width: 100%;
       position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
-      // padding: 4px 0;
-      // background: red;
 
       .logodivv {
          width: 32px;
          height: 28px;
          position: relative;
-         // background: green;
          padding: 4px;
          cursor: pointer;
-         // transition: width .3s ease-in-out, margin-left .3s ease-in;
 
 
          div {
@@ -42,7 +37,6 @@
             margin-bottom: 6px;
             width: 100%;
             border-radius: 18px;
-            // transition: width .3s ease-in-out, margin-left .3s ease-in;
 
          }
 
@@ -90,32 +84,15 @@
 
 @keyframes fadeInAnimation {
    from {
-      // opacity: 0;
-      // padding-top: 0;
-      // padding-bottom: 0;
-      // padding: 0 100px;
-
-      // display: none;
-      // transform: translateY(-100%);
       height: 0;
-      // position: absolute;
-      // transform: translate();
    }
 
    to {
-      // opacity: 1;
-      // padding-top: 32px;
-      // padding-bottom: 32px;
-      // padding: 32px 100px;
-      // display: flex;
-      // transform: translateY(0);
       height: 100px;
-      // position: relative;
    }
 }
 
 .header--menu--options {
-   // display: flex;
    position: relative;
    align-items: center;
    width: 100%;
@@ -124,7 +101,6 @@
    font-size: 24px;
    font-weight: 600;
    padding: 0px 100px;
-   color: #ADADAD;
    transition: color .3s ease-in-out;
    height: 100px;
    overflow: hidden;
@@ -136,10 +112,15 @@
 
    P {
       cursor: pointer;
+      color: #ADADAD; 
+      border-bottom: $mainColor;
+      transition: color .3s ease-in-out, border-bottom .3s ease-in-out;
+
 
       &:hover {
-         color: #fb974f;
-         transition: color .3s ease-in-out;
+         color: black;
+         border-bottom: #f8893a solid 1.5px;
+         transition: color .3s ease-in-out, border-bottom .3s ease-in-out;
       }
    }
 }

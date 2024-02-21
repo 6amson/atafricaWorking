@@ -19,6 +19,8 @@ import Footer from './style/components/footer/footer';
 import background from "../../assets/homepage_background2.svg";
 import gsap from 'gsap';
 import { TextPlugin } from "gsap/TextPlugin";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useMediaQuery } from 'react-responsive';
 
 
 
@@ -27,20 +29,89 @@ import { TextPlugin } from "gsap/TextPlugin";
 export default function Home() {
 
   // const [brands, setBrands] = useState([adobe, salesforce, airbnb, google, microsoft]);
-  const homepageWords = ['Ideas', 'Breakthroughs', 'Innovations', 'Ventures'];
+  const homepageWords: Array<string> = ['Ideas', 'Breakthroughs', 'Innovations', 'Ventures'];
   gsap.registerPlugin(TextPlugin);
+  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
 
-    let tlMaster = gsap.timeline({ repeat: -1 });
+    let tlTextMaster = gsap.timeline({ repeat: -1 });
 
     homepageWords.forEach((word) => {
-
       let tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
 
       tlText.to('#animated--type--text', { duration: 2, text: word });
-      tlMaster.add(tlText);
+      tlTextMaster.add(tlText);
+    });
+
+    const tl1 = gsap.timeline();
+
+    tl1.to(".Herotext1", {
+      duration: 1,
+      y: 0,
+      height: "fit-content",
+      ease: "power4.inOut",
+      opacity: 1,
+      skewY: 0,
+      stagger: {
+        amount: 0.3
+      }
     })
+      .to(".Herotext2", {
+        duration: 1,
+        // delay: 1,
+        // x: 0,
+        // width: "100%",
+        ease: "power1.out",
+        // skewY: 0,
+        opacity: 1,
+        stagger: {
+          amount: 0.3
+        }
+      })
+      .to(".Herotext3", {
+        duration: 1,
+        delay: 1,
+        y: 0,
+        height: "fit-content",
+        ease: "power1.out",
+        skewY: 0,
+        stagger: {
+          amount: 0.3
+        }
+      })
+      .to(".homepage--background", {
+        duration: 1,
+        x: 0,
+        width: "100vw",
+        ease: "power1.out",
+        stagger: {
+          amount: 0.3
+        }
+      }, "-=2")
+      .to(".brand--section1", {
+        duration: 0,
+        display: "block",
+      })
+
+
+    gsap.to('.brand--section1', {
+      opacity: 1,
+      duration: 1,
+      ease: 'easeIn',
+      // x: 200,
+      // scale: 1.5,
+      // rotation: 360,
+      scrollTrigger: {
+        trigger: '.brand--section1',
+        start: "top center",
+        // end: "bottom center",
+        // scrub: true,
+        // markers: true,
+      },
+    })
+
+
   }, [])
 
   const services = [
@@ -69,13 +140,13 @@ export default function Home() {
       <div className="main">
         <div className='main--subcontainer'>
           <Image src={background} alt='background image' className='homepage--background' />
-          <h1>Next-Gen <span id='animated--type--text'></span> Forged Here</h1>
-          <p>Step into the future with ATAfrica, where next-gen
+          <h1 className='Herotext1'>Next-Gen <span id='animated--type--text'></span> Forged Here</h1>
+          <p className='Herotext2'>Step into the future with ATAfrica, where next-gen
             ideas meet boundless possibilities. Join us on the
             entrepreneurial journey of a lifetime, shaping tomorrow&apos;s
             success stories, one innovation at a time.
             Welcome to the next era of creativity and collaboration!</p>
-          <div>
+          <div className='Herotext3'>
             <p>PARTNER WITH US</p>
             <Image src={arrow} alt='arrow pointed right' className='arrrow--icon' />
           </div>
