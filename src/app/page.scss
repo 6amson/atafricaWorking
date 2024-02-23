@@ -124,6 +124,10 @@
     font-family: $mainFont;
     display: none;
 
+    .revelation1 {
+      overflow: hidden;
+    }
+
     .revelation--para0 {
       font-size: 16px;
       font-weight: 600;
@@ -134,19 +138,15 @@
       color: black;
     }
 
-    .revelation1 {
-      overflow: hidden;
-    }
-
     .revelation--para2 {
       font-weight: 700;
       font-size: 64px;
       margin-bottom: 24px;
-      transform: translateY(200px);
+      transform: translateY(270px);
     }
 
-    .revelation--para3{
-      transform: translateY(100px);
+    .revelation--para3 {
+      transform: translateY(170px);
     }
 
     .brand--section1--div {
@@ -171,7 +171,7 @@
         line-height: 26px;
         letter-spacing: 0.08em;
         margin-bottom: 8px;
-      opacity: 0;
+        opacity: 0;
 
 
         &:hover {
@@ -261,21 +261,31 @@
   padding: 100px;
   gap: 50px;
 
+
+
   .services--section1 {
     margin-bottom: 64px;
 
-    P:first-child {
-      font-size: 16px;
-      line-height: 26px;
-      font-weight: 600;
-      margin-bottom: 8px;
+    .revelation2 {
+      overflow: hidden;
     }
 
-    p:nth-child(2) {
-      font-size: 64px;
-      line-height: 96px;
-      font-weight: 700;
-      width: 90%;
+    div {
+      .revelation2--para1 {
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        transform: translateY(-50px);
+      }
+
+      .revelation2--para2 {
+        font-size: 64px;
+        line-height: 96px;
+        font-weight: 700;
+        width: 90%;
+        transform: translateY(200px);
+      }
     }
   }
 
@@ -300,6 +310,8 @@
       .services--section2--img {
         width: 120px;
         height: 120px;
+        transform: translateX(100px);
+        opacity: 0;
       }
 
       div {
@@ -426,12 +438,16 @@
       margin: -78px 16px 160px 16px;
       padding: 52px 20px;
 
-     .revelation--para0 {
+      .revelation--para0 {
         font-size: 14px;
       }
 
       .revelation--para2 {
         font-size: 32px;
+      }
+
+      .revelation--para3 {
+        transform: translateY(350px);
       }
     }
 
@@ -460,14 +476,20 @@
 
     .services--section1 {
 
-      P:first-child {
-        font-size: 14px;
-        line-height: 22px;
+      .revelation2 {
+        overflow: hidden;
       }
 
-      p:nth-child(2) {
-        font-size: 48px;
-        line-height: 48px;
+      div {
+        .revelation2--para1 {
+          font-size: 14px;
+          line-height: 22px;
+        }
+
+        .revelation2--para2 {
+          font-size: 32px;
+          line-height: 48px;
+        }
       }
     }
   }

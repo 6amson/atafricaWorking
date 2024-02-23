@@ -38,7 +38,8 @@ export default function Home() {
     const char = new SplitType('.Herotext1');
     let tlTextMaster = gsap.timeline({ repeat: -1 });
     let revelation1 = document.querySelectorAll(".revelation--para1");
-    console.log(revelation1);
+    let revelation2 = document.querySelectorAll(".revelation2--para");
+
 
     homepageWords.forEach((word) => {
       let tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
@@ -52,7 +53,7 @@ export default function Home() {
         scrollTrigger: {
           trigger: '.brand--section1',
           toggleActions: "restart none none reset",
-          markers: true,
+          // markers: true,
           scrub: true,
           start: "5% center",
           end: "bottom center",
@@ -64,7 +65,7 @@ export default function Home() {
         duration: 1.8,
         delay: .05,
         y: 0,
-        skewY: 0,
+        // skewY: -5,
         opacity: 1,
         stagger: {
           amount: 0.05
@@ -74,6 +75,45 @@ export default function Home() {
       })
     })
 
+
+    revelation2.forEach((container) => {
+      let tlText1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.services--section1',
+          toggleActions: "restart none none reset",
+          // markers: true,
+          scrub: true,
+          start: "40% center",
+          end: "bottom center",
+        }
+      });
+
+      tlText1.set(container, { autoAlpha: 1 });
+      tlText1.to(container, {
+        duration: 1.8,
+        delay: .05,
+        y: 0,
+        opacity: 1,
+        stagger: {
+          amount: 0.05
+        },
+        ease: "ease.out"
+      })
+
+      tlText1.to('.services--section2--img', {
+        duration: 1.5,
+        delay: .05,
+        x: 0,
+        rotation: 360,
+        opacity: 1,
+        stagger: {
+          amount: 0.05
+        },
+        ease: "ease.out"
+      })
+    });
+
+
     const tl1 = gsap.timeline();
     tl1.to(".Herotext1", {
       duration: 1,
@@ -81,28 +121,20 @@ export default function Home() {
       height: "fit-content",
       ease: "power4.inOut",
       opacity: 1,
-      // skewY: 0,
       stagger: {
         amount: 0.3
       }
     }).to(".char", {
       duration: .7,
       y: 0,
-      // height: "fit-content",
       ease: "power4.inOut",
-      // opacity: 1,
-      // skewY: 0,
       stagger: {
         amount: 0.3
       }
     })
       .to(".Herotext2", {
         duration: 1,
-        // delay: 1,
-        // x: 0,
-        // width: "100%",
         ease: "power1.out",
-        // skewY: 0,
         opacity: 1,
         stagger: {
           amount: 0.3
@@ -132,23 +164,6 @@ export default function Home() {
         duration: 0,
         display: "block",
       })
-
-
-    // gsap.to('.brand--section1--para1', {
-    //   // opacity: 1,
-    //   duration: .3,
-    //   ease: 'easeIn',
-    //   y: 0,
-    //   stagger: 0.02,
-    //   delay: .2,
-    //   scrollTrigger: {
-    //     trigger: '.brand--section1',
-    //     start: "top center",
-    //     end: "bottom center",
-    //     scrub: true,
-    //     markers: true,
-    //   },
-    // })
 
 
   }, [])
@@ -231,8 +246,8 @@ export default function Home() {
 
       <div className='services--section'>
         <div className='services--section1'>
-          <p>WHAT MAKES US UNIQUE</p>
-          <p>Tailored services that propel success</p>
+          <div className='revelation2'><p className='revelation2--para revelation2--para1'>WHAT MAKES US UNIQUE</p></div>
+          <div className='revelation2'><p className='revelation2--para revelation2--para2'>Tailored services that propel success</p></div>
         </div>
 
         <div className='services--section2'>
