@@ -21,6 +21,7 @@ import gsap from 'gsap';
 import { TextPlugin } from "gsap/TextPlugin";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useMediaQuery } from 'react-responsive';
+import SplitType from 'split-type';
 
 
 
@@ -34,25 +35,63 @@ export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-
+    const char = new SplitType('.Herotext1');
     let tlTextMaster = gsap.timeline({ repeat: -1 });
+    let revelation1 = document.querySelectorAll(".revelation--para1");
+    console.log(revelation1);
 
     homepageWords.forEach((word) => {
       let tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
 
-      tlText.to('#animated--type--text', { duration: 2, text: word });
+      tlText.to('#animated--type--text', { duration: 2, text: word, });
       tlTextMaster.add(tlText);
     });
 
-    const tl1 = gsap.timeline();
+    revelation1.forEach((container) => {
+      let tlText1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.brand--section1',
+          toggleActions: "restart none none reset",
+          markers: true,
+          scrub: true,
+          start: "5% center",
+          end: "bottom center",
+        }
+      });
 
+      tlText1.set(container, { autoAlpha: 1 });
+      tlText1.to(container, {
+        duration: 1.8,
+        delay: .05,
+        y: 0,
+        skewY: 0,
+        opacity: 1,
+        stagger: {
+          amount: 0.05
+        },
+
+        ease: "stepped.out"
+      })
+    })
+
+    const tl1 = gsap.timeline();
     tl1.to(".Herotext1", {
       duration: 1,
       y: 0,
       height: "fit-content",
       ease: "power4.inOut",
       opacity: 1,
-      skewY: 0,
+      // skewY: 0,
+      stagger: {
+        amount: 0.3
+      }
+    }).to(".char", {
+      duration: .7,
+      y: 0,
+      // height: "fit-content",
+      ease: "power4.inOut",
+      // opacity: 1,
+      // skewY: 0,
       stagger: {
         amount: 0.3
       }
@@ -84,7 +123,7 @@ export default function Home() {
         duration: 1,
         x: 0,
         width: "100vw",
-        ease: "power1.out",
+        ease: "power2",
         stagger: {
           amount: 0.3
         }
@@ -95,21 +134,21 @@ export default function Home() {
       })
 
 
-    gsap.to('.brand--section1', {
-      opacity: 1,
-      duration: 1,
-      ease: 'easeIn',
-      // x: 200,
-      // scale: 1.5,
-      // rotation: 360,
-      scrollTrigger: {
-        trigger: '.brand--section1',
-        start: "top center",
-        // end: "bottom center",
-        // scrub: true,
-        // markers: true,
-      },
-    })
+    // gsap.to('.brand--section1--para1', {
+    //   // opacity: 1,
+    //   duration: .3,
+    //   ease: 'easeIn',
+    //   y: 0,
+    //   stagger: 0.02,
+    //   delay: .2,
+    //   scrollTrigger: {
+    //     trigger: '.brand--section1',
+    //     start: "top center",
+    //     end: "bottom center",
+    //     scrub: true,
+    //     markers: true,
+    //   },
+    // })
 
 
   }, [])
@@ -155,16 +194,17 @@ export default function Home() {
 
       <div className='brand--section'>
         <div className='brand--section1'>
-          <p>WHO WE ARE</p>
-          <p>A Hub for Entrepreneurial Excellence</p>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          <div className='revelation1'><p className='revelation--para1 revelation--para0'>WHO WE ARE</p></div>
+          <div className='revelation1'><p className='revelation--para1 revelation--para2'>A Hub for Entrepreneurial Excellence</p></div>
+          <div className='revelation1'><p className='revelation--para1 revelation--para3'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam.Sed ut perspiciatis
             unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
             totam rem aperiam.Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam.</p>
-          <div>
-            <p>ABOUT US</p>
-            <Image src={arrow} alt='arrow pointed right' className='arrrow--icon' />
+          </div>
+          <div className='brand--section1--div revelation1'>
+            <p className='revelation--para1'>ABOUT US</p>
+            <Image src={arrow} alt='arrow pointed right' className='arrrow--icon revelation--para1' />
           </div>
         </div>
         <div className='brand--section2'>

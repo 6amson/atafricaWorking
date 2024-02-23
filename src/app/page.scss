@@ -33,19 +33,18 @@
   // background: greenyellow;
 
 
-  h1 {
+  .Herotext1 {
     font-size: 64px;
     font-weight: 300;
     text-align: center;
     margin-bottom: 16px;
-    // background: rgb(0, 187, 255);
+    font-family: $mainFont;
     position: relative;
     overflow: hidden;
-    transform: skewY(10deg);
     opacity: 0;
     position: relative;
-    transform: translateY(200px);
-    height: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
 
     span {
       text-decoration: underline;
@@ -63,17 +62,13 @@
     margin-bottom: 48px;
     position: relative;
     opacity: 0;
-    // overflow: hidden;
-    // transform: skewY(10deg);
-    // transform: translateX(-500px);
-    // height: fit-content;
-    // background: red;
   }
 
   p:first-child {
     color: #FC700A;
     cursor: pointer;
     position: relative;
+    font-family: $mainFont;
     // background: green;
     transition: margin-right .3s ease-out;
 
@@ -109,6 +104,10 @@
   }
 }
 
+.char {
+  transform: translateY(350px);
+  transition: transform .5s;
+}
 
 .brand--section {
   width: 100vw;
@@ -124,24 +123,33 @@
     text-align: center;
     font-family: $mainFont;
     display: none;
-    // transform: scale(1.5);
 
-    p:first-child {
+    .revelation--para0 {
       font-size: 16px;
       font-weight: 600;
       line-height: 26px;
       letter-spacing: 0.08em;
       margin-bottom: 8px;
+      transform: translateY(50px);
+      color: black;
     }
 
-    p:nth-child(2) {
+    .revelation1 {
+      overflow: hidden;
+    }
+
+    .revelation--para2 {
       font-weight: 700;
       font-size: 64px;
       margin-bottom: 24px;
-
+      transform: translateY(200px);
     }
 
-    div {
+    .revelation--para3{
+      transform: translateY(100px);
+    }
+
+    .brand--section1--div {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -151,13 +159,20 @@
       margin-bottom: 52px;
 
 
-      p:first-child {
+      p {
         cursor: pointer;
         margin-right: 8px;
         display: flex;
         align-self: center;
         margin-top: 8px;
         transition: margin-right .3s ease-out;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 26px;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+      opacity: 0;
+
 
         &:hover {
           margin-right: 16px;
@@ -370,7 +385,22 @@
   .main--subcontainer {
     width: 398px;
 
-    h1 {
+    // .line{
+    //   height: fit-content;
+    //   background: red; 
+    // }
+
+    .Herotext1 {
+      height: fit-content;
+      font-kerning: none;
+      font-size: 32px;
+
+      span {
+        font-size: 32px;
+      }
+    }
+
+    .char {
       font-size: 32px;
     }
 
@@ -383,6 +413,8 @@
     #animated--type--text {
       display: block;
       min-height: 48px;
+      // background: red;
+      // margin
     }
 
   }
@@ -394,11 +426,11 @@
       margin: -78px 16px 160px 16px;
       padding: 52px 20px;
 
-      p:first-child {
+     .revelation--para0 {
         font-size: 14px;
       }
 
-      p:nth-child(2) {
+      .revelation--para2 {
         font-size: 32px;
       }
     }
@@ -461,20 +493,10 @@
 
         .primary--brandsection {
           width: fit-content;
-          // left: 100%;
           top: 0%;
-          // animation: primary 10s linear infinite;
-          // margin-right: 200px; 
         }
 
         .secondary--brandsection {
-          // width: fit-content;
-          // height: inherit;
-          // position: absolute;
-          // // left: 20%;
-          // top: 0%;
-          // animation: secondary 20s linear infinite;
-          // margin-left: 50px;
           display: none;
         }
 
