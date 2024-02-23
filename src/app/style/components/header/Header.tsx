@@ -50,14 +50,11 @@ export default function Header() {
                 </div>
             </div>
             <div
-                // className={`header--menu--options ${isMenuHovered ? "show" : "hide"}`}
                 className={isMenuHovered ? "header--menu--options" : "inactiveHeaderOptions"}
                 ref={menuRef}
                 style={{
                     opacity: isMenuHovered ? 1 : 0,
-                    // height: isMenuHovered ? "auto" : 0,
                     display: isMenuHovered ? "flex" : 'flex',
-                    // transition: "height 1s ease-in",
                 }}
             >
                 <p>Profile</p>

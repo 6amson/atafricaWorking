@@ -8,11 +8,17 @@
     padding: 160px 100px;
     font-family: $mainFont;
 
-    p {
+    // p {}
+
+    #prefooter--text {
         font-size: 64px;
         font-weight: 700;
         line-height: 96px;
         margin-bottom: 24px;
+        position: relative;
+        opacity: 0;
+        overflow: hidden;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     button {
@@ -26,6 +32,8 @@
         border-right: #FC700A solid 2px;
         cursor: pointer;
         transition: border-top .3s ease-in, border-bottom .3s ease-in-out;
+        opacity: 0;
+        transform: translateX(150px);
 
         &:hover {
             border-top: #FC700A solid 2px;
@@ -33,13 +41,18 @@
             transition: border-top .3s ease-in, border-bottom .3s ease-in-out;
         }
     }
+
+    .word {
+        transform: translateY(350px) skewY(10deg);
+        transition: transform .5s;
+    }
 }
 
 @media (max-width: 856px) {
     .prefooter {
         padding: 32px 16px;
 
-        p {
+        #prefooter--text {
             font-size: 32px;
             line-height: 48px;
         }

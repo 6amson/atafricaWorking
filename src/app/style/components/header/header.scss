@@ -96,6 +96,7 @@
    position: relative;
    align-items: center;
    width: 100%;
+   // display: flex;
    justify-content: space-between;
    font-family: $mainFont;
    font-size: 24px;
@@ -105,9 +106,6 @@
    height: 100px;
    overflow: hidden;
    animation: fadeInAnimation .5s;
-
-   // background: red;
-
 
 
    P {
@@ -170,5 +168,15 @@
 
    .header--menu--options {
       padding: 16px 16px;
+      height: fit-content;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      // background: red;
+
+      p{
+         margin-bottom: 24px;
+         width: fit-content;
+      }
    }
 }

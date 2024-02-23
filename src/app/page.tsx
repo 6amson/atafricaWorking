@@ -65,7 +65,6 @@ export default function Home() {
         duration: 1.8,
         delay: .05,
         y: 0,
-        // skewY: -5,
         opacity: 1,
         stagger: {
           amount: 0.05
@@ -83,7 +82,7 @@ export default function Home() {
           toggleActions: "restart none none reset",
           // markers: true,
           scrub: true,
-          start: "40% center",
+          start: "30% center",
           end: "bottom center",
         }
       });
