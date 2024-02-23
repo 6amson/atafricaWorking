@@ -79,7 +79,7 @@ export default function Home() {
     revelation2.forEach((container) => {
       let tlText1 = gsap.timeline({
         scrollTrigger: {
-          trigger: '.services--section1',
+          trigger: '.services--section2',
           toggleActions: "restart none none reset",
           // markers: true,
           scrub: true,
