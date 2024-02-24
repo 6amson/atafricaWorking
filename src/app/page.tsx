@@ -103,7 +103,7 @@ export default function Home() {
       scrollTrigger: {
         trigger: '.services--section2',
         toggleActions: "restart none none reset",
-        markers: true,
+        // markers: true,
         scrub: true,
         start: "30% center",
         end: "70% center",
