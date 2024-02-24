@@ -79,6 +79,7 @@
 
    to {
       height: 0;
+
    }
 }
 
@@ -89,6 +90,27 @@
 
    to {
       height: 100px;
+   }
+}
+
+@keyframes fadeOutAnimationM {
+   from {
+      height: 250px;
+   }
+
+   to {
+      height: 0;
+
+   }
+}
+
+@keyframes fadeInAnimationM {
+   from {
+      height: 0;
+   }
+
+   to {
+      height: 250px;
    }
 }
 
@@ -122,9 +144,50 @@
    }
 }
 
+.header--menu--optionsM {
+   position: relative;
+   align-items: center;
+   width: 100%;
+   justify-content: space-between;
+   font-family: $mainFont;
+   font-size: 24px;
+   font-weight: 600;
+   transition: color .3s ease-in-out;
+   height: 100px;
+   overflow: hidden;
+   animation: fadeInAnimationM .5s;
+   padding: 16px 16px;
+   height: 250px;
+   flex-direction: column;
+   text-align: center;
+
+
+   P {
+      cursor: pointer;
+      margin-bottom: 24px;
+      width: fit-content;
+      color: #ADADAD; 
+      border-bottom: $mainColor;
+      transition: color .3s ease-in-out, border-bottom .3s ease-in-out;
+
+
+      &:hover {
+         color: black;
+         border-bottom: #f8893a solid 1.5px;
+         transition: color .3s ease-in-out, border-bottom .3s ease-in-out;
+      }
+   }
+}
+
 .inactiveHeaderOptions {
    height: 0;
    animation: fadeOutAnimation .5s;
+}
+
+
+.inactiveHeaderOptionsM {
+   height: 0;
+   animation: fadeOutAnimationM .5s;
 }
 
 
@@ -167,7 +230,7 @@
 
    .header--menu--options {
       padding: 16px 16px;
-      height: 250px;
+      // height: 250px;
       flex-direction: column;
       text-align: center;
       width: 100%;

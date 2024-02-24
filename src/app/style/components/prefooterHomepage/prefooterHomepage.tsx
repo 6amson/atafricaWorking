@@ -46,10 +46,10 @@ export default function Prefooter() {
                 amount: 0.5
             }
         }).to("button", {
-            duration: 1,
+            duration: 1.8,
             x: 0,
             opacity: 1,
-            ease: "power4.inOut",
+            ease: "steeped.out",
             stagger: {
                 amount: 0.5
             }

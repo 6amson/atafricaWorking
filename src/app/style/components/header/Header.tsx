@@ -8,11 +8,13 @@ import Menu from "../../../../../assets/menu_icon.svg";
 import useOnclickOutside from "react-cool-onclickoutside";
 import gsap from "gsap";
 import { Flip } from "gsap/Flip";
+import { useMediaQuery } from "react-responsive";
 
 
 export default function Header() {
     const [isMenuHovered, setIsMenuHovered] = useState(false);
     gsap.registerPlugin(Flip);
+    const isMediumScreen = useMediaQuery({ query: '(max-width: 856px)' });
     // const menuOptions = gsap.utils.toArray(".header--menu--options");
 
     const menuRef = useOnclickOutside(() => {
@@ -38,7 +40,14 @@ export default function Header() {
                 <Image className="logo" src={Logo} alt="ATAfrica logo" />
                 {/* <p>{isMenuHovered ? 'YES' : 'NO'}</p> */}
                 <div className="logoDiv">
-                    <div className="logodivv"
+                    {isMediumScreen ? <div className="logodivv"
+                        onClick={handlemenuclick}
+                        ref={menuRef}
+                    >
+                        <div />
+                        <div />
+                        <div />
+                    </div> : <div className="logodivv"
                         onMouseOver={() => setIsMenuHovered(true)}
                         onClick={handlemenuclick}
                         ref={menuRef}
@@ -46,11 +55,15 @@ export default function Header() {
                         <div />
                         <div />
                         <div />
-                    </div>
+                    </div>}
                 </div>
             </div>
             <div
-                className={isMenuHovered ? "header--menu--options" : "inactiveHeaderOptions"}
+                className={
+                    isMediumScreen && isMenuHovered ? "header--menu--optionsM" :
+                        !isMediumScreen && isMenuHovered ? "header--menu--options" : 
+                        isMediumScreen && !isMenuHovered ? "inactiveHeaderOptionsM" :
+                        "inactiveHeaderOptions"}
                 ref={menuRef}
                 style={{
                     opacity: isMenuHovered ? 1 : 0,
