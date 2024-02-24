@@ -72,8 +72,7 @@ export default function Home() {
 
         ease: "stepped.out"
       })
-    })
-
+    });
 
     revelation2.forEach((container) => {
       let tlText1 = gsap.timeline({
@@ -82,15 +81,15 @@ export default function Home() {
           toggleActions: "restart none none reset",
           // markers: true,
           scrub: true,
-          start: "30% center",
-          end: "bottom center",
+          start: "top 70%",
+          end: "70% center",
         }
       });
 
       tlText1.set(container, { autoAlpha: 1 });
       tlText1.to(container, {
         duration: 1.8,
-        delay: .05,
+        // delay: .05,
         y: 0,
         opacity: 1,
         stagger: {
@@ -98,19 +97,30 @@ export default function Home() {
         },
         ease: "ease.out"
       })
-
-      tlText1.to('.services--section2--img', {
-        duration: 1.5,
-        delay: .05,
-        x: 0,
-        rotation: 360,
-        opacity: 1,
-        stagger: {
-          amount: 0.05
-        },
-        ease: "ease.out"
-      })
     });
+
+    let tlText1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.services--section2',
+        toggleActions: "restart none none reset",
+        markers: true,
+        scrub: true,
+        start: "30% center",
+        end: "70% center",
+      }
+    });
+
+    tlText1.to('.services--section2--img', {
+      duration: 1.5,
+      delay: .05,
+      x: 0,
+      rotation: 360,
+      opacity: 1,
+      stagger: {
+        amount: 0.05
+      },
+      ease: "ease.out"
+    })
 
 
     const tl1 = gsap.timeline();

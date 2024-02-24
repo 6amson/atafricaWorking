@@ -23,8 +23,8 @@ export default function Prefooter() {
                 toggleActions: "restart none none reset",
                 // markers: true,
                 scrub: true,
-                start: "90% center",
-                end: "120% center",
+                start: "top top",
+                end: "bottom 10%",
             }
         })
 
