@@ -15,45 +15,45 @@ export default function Prefooter() {
     gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
-        const word = new SplitType('#prefooter--text', { types: 'words' });
-        console.log(word);
-        let tl1 = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.prefooter',
-                toggleActions: "restart none none reset",
-                // markers: true,
-                scrub: true,
-                start: "top top",
-                end: "bottom 10%",
-            }
-        })
+        // const word = new SplitType('#prefooter--text', { types: 'words' });
+        // console.log(word);
+        // let tl1 = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: '.prefooter',
+        //         toggleActions: "restart none none reset",
+        //         // markers: true,
+        //         scrub: true,
+        //         start: "top top",
+        //         end: "bottom 10%",
+        //     }
+        // })
 
-        tl1.to("#prefooter--text", {
-            duration: 1,
-            y: 0,
-            height: "fit-content",
-            ease: "power4.inOut",
-            opacity: 1,
-            stagger: {
-                amount: 1.5
-            }
-        }).to(".word", {
-            duration: 1.5,
-            y: 0,
-            ease: "power4.inOut",
-            skewY: -10,
-            stagger: {
-                amount: 0.5
-            }
-        }).to("button", {
-            duration: 1.8,
-            x: 0,
-            opacity: 1,
-            ease: "steeped.out",
-            stagger: {
-                amount: 0.5
-            }
-        })
+        // tl1.to("#prefooter--text", {
+        //     duration: 1,
+        //     y: 0,
+        //     height: "fit-content",
+        //     ease: "power4.inOut",
+        //     opacity: 1,
+        //     stagger: {
+        //         amount: 1.5
+        //     }
+        // }).to(".word", {
+        //     duration: 1.5,
+        //     y: 0,
+        //     ease: "power4.inOut",
+        //     skewY: -10,
+        //     stagger: {
+        //         amount: 0.5
+        //     }
+        // }).to("button", {
+        //     duration: 1.8,
+        //     x: 0,
+        //     opacity: 1,
+        //     ease: "steeped.out",
+        //     stagger: {
+        //         amount: 0.5
+        //     }
+        // })
 
     }, []);
 

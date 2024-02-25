@@ -16,7 +16,7 @@
         line-height: 96px;
         margin-bottom: 24px;
         position: relative;
-        opacity: 0;
+        opacity: 1;
         overflow: hidden;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
@@ -32,8 +32,7 @@
         border-right: #FC700A solid 2px;
         cursor: pointer;
         transition: border-top .3s ease-in, border-bottom .3s ease-in-out;
-        opacity: 0;
-        transform: translateX(200px);
+        opacity: 1;
 
         &:hover {
             border-top: #FC700A solid 2px;

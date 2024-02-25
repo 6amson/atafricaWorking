@@ -172,7 +172,46 @@ export default function Home() {
       .to(".brand--section1", {
         duration: 0,
         display: "block",
-      })
+      });
+
+    const word = new SplitType('#prefooter--text', { types: 'words' });
+    let prefooterTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#prefooter--text',
+        toggleActions: "restart none none reset",
+        // markers: true,
+        scrub: true,
+        start: "top top",
+        end: "bottom top",
+      }
+    })
+
+    prefooterTl.to("#prefooter--text", {
+      duration: 1,
+      y: 0,
+      height: "fit-content",
+      ease: "power4.inOut",
+      opacity: 1,
+      stagger: {
+        amount: 1.5
+      }
+    }).to(".word", {
+      duration: 1.5,
+      y: 0,
+      ease: "power4.inOut",
+      skewY: -10,
+      stagger: {
+        amount: 0.5
+      }
+    }).to("button", {
+      duration: 1.8,
+      x: 0,
+      opacity: 1,
+      ease: "steeped.out",
+      stagger: {
+        amount: 0.5
+      }
+    })
 
 
   }, [])
@@ -283,9 +322,13 @@ export default function Home() {
 
       <StatsHomepage />
 
-      <Prefooter />
+      <div className='prefooter'>
+        <p id='prefooter--text'>Partner with ATAfrica today and become a
+          part of the next generation of innovations</p>
+        <button>PARTNER WITH US</button>
+      </div>
 
       <Footer />
-    </main>
+    </main >
   )
 }
