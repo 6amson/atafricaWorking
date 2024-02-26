@@ -14,7 +14,6 @@ import serviceLogo2 from '../../assets/services_logo2.svg';
 import serviceLogo3 from '../../assets/services_logo3.svg';
 import FeatureHomepage from './style/components/featureHomepage/featureHomepage';
 import StatsHomepage from './style/components/statsHomepage/statsHomepage';
-import Prefooter from './style/components/prefooterHomepage/prefooterHomepage';
 import Footer from './style/components/footer/footer';
 import background from "../../assets/homepage_background2.svg";
 import gsap from 'gsap';
@@ -22,6 +21,12 @@ import { TextPlugin } from "gsap/TextPlugin";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useMediaQuery } from 'react-responsive';
 import SplitType from 'split-type';
+import feature1a from '../../assets/Ft9ja--mockup.svg';
+import feature1b from '../../assets/ft9ja--mockup--details.svg';
+import feature2b from '../../assets/robo--mockup--details.svg';
+import feature2a from '../../assets/robo--mockup.svg';
+
+
 
 
 
@@ -188,7 +193,7 @@ export default function Home() {
       scrollTrigger: {
         trigger: '#prefooter--text',
         toggleActions: "restart none none reset",
-        markers: true,
+        // markers: true,
         scrub: true,
         start: "-70% center",
         end: "bottom center",
@@ -224,6 +229,24 @@ export default function Home() {
 
 
   }, [])
+
+  const featureStartup = [
+    {
+      id: 1,
+      image1: feature1a,
+      image2: feature1b,
+    },
+    {
+      id: 2,
+      image1: feature2a,
+      image2: feature2b,
+    },
+    {
+      id: 3,
+      image1: feature1a,
+      image2: feature1b,
+    },
+  ];
 
   const services = [
     {
@@ -319,7 +342,7 @@ export default function Home() {
         </div>
       </div>
 
-      <FeatureHomepage />
+      <FeatureHomepage items={featureStartup} />
 
       <StatsHomepage />
 

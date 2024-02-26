@@ -20,12 +20,15 @@
     "react-cool-onclickoutside": "^1.7.0",
     "react-dom": "18.2.0",
     "react-responsive": "^9.0.2",
+    "react-slick": "^0.30.2",
     "sass": "^1.70.0",
+    "slick-carousel": "^1.8.1",
     "split-type": "^0.3.4",
     "typescript": "5.3.3"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.23.3",
-    "@locator/babel-jsx": "^0.4.3"
+    "@locator/babel-jsx": "^0.4.3",
+    "@types/react-slick": "^0.23.13"
   }
 }

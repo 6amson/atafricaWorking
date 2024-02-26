@@ -5,6 +5,7 @@
     text-align: center;
     font-family: $mainFont;
     padding: 160px 100px;
+    background: $mainColor;
 
     p:first-child {
         font-size: 16px;
@@ -21,47 +22,50 @@
     }
 
     .portfolio--section--div {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 32px;
+        display: flex !important;
+        flex-wrap: wrap;
+        // gap: 32px;
         justify-content: center;
         overflow: hidden;
         align-items: center;
+        place-items: center;
         scroll-behavior: smooth;
-        overflow: scroll;
-        scrollbar-width: none;
+        width: 100%;
         -ms-overflow-style: none;
 
-        div {
-            display: flex;
+        .slide {
+            display: flex !important;
             height: fit-content;
             gap: 32px;
-            place-items: start;
-            // flex-wrap: wrap;
+            flex-wrap: wrap;
             justify-content: center;
-            transition: gap .3s ease-in-out;
+            align-items: center;
+            place-items: start;
+            border: transparent;
+            transition: border .3s ease-in-out;
 
 
             &:hover {
-                gap: 16px;
-                transition: gap .3s ease-in-out;
 
                 .ft9ja--mockup1 {
-                    transform: scale(1.02);
                     transition: transform .3s ease-in-out;
                 }
+
+                .ft9ja--mockup2 {}
             }
 
             .ft9ja--mockup1 {
                 overflow: hidden;
-                min-width: fit-content;
+                min-width: 300px;
                 height: 594px;
+                min-width: 50%;
                 transition: transform .3s ease-in-out;
             }
 
             .ft9ja--mockup2 {
                 background: white;
                 height: 554px;
+                width: fit-content;
             }
         }
     }
@@ -73,9 +77,11 @@
 
     .portfolio--section {
 
-        div {
-            .ft9ja--mockup2 {
-                width: 645px;
+        .slide {
+            div {
+                .ft9ja--mockup2 {
+                    width: 645px;
+                }
             }
         }
     }
@@ -85,6 +91,20 @@
 
     .portfolio--section {
         padding: 32px 16px;
+
+        .portfolio--section--div {
+            .slide {
+                div {
+                    .ft9ja--mockup2 {
+                        width: 90%;
+                        object-fit: center;
+                        background: white;
+
+                        .ft9ja--mockup2img {}
+                    }
+                }
+            }
+        }
 
 
         p:first-child {
@@ -97,9 +117,33 @@
             line-height: 48px;
         }
 
-        div {
+    }
+}
+
+@media (max-width: 666px) {
+    .portfolio--section {
+        padding: 32px 16px;
+
+        .slide {
+            width: 100%;
+
+            .ft9ja--mockup1 {
+                width: 100%;
+                margin-bottom: 32px;
+                // background: green;
+
+                .ft9ja--mockup1img {
+                    width: 100% !important;
+                }
+            }
+
             .ft9ja--mockup2 {
                 width: 100%;
+                // background: blue;
+
+                .ft9ja--mockup2img {
+                    width: 90% !important;
+                }
             }
         }
     }
@@ -109,12 +153,22 @@
     .portfolio--section {
         padding: 32px 16px;
 
-        div {
+        .slide {
+            width: 100%;
+
+            .ft9ja--mockup1 {
+                width: 100%;
+
+                .ft9ja--mockup1img {
+                    width: 100% !important;
+                }
+            }
+
             .ft9ja--mockup2 {
                 width: 100%;
 
                 .ft9ja--mockup2img {
-                    width: 90%;
+                    width: 90% !important;
                 }
             }
         }
