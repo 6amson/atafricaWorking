@@ -60,7 +60,7 @@
     margin-bottom: 48px;
     position: relative;
     opacity: 0;
-    font-family: $mainFont; 
+    font-family: $mainFont;
   }
 
   p:first-child {
@@ -68,7 +68,6 @@
     cursor: pointer;
     position: relative;
     font-family: $mainFont;
-    // background: green;
     transition: margin-right .3s ease-out;
 
     &:hover {
@@ -81,9 +80,7 @@
   .Herotext3 {
     display: flex;
     overflow: hidden;
-    // transform: skewY(10deg);
     position: relative;
-    // transform: translateY(-50px);
     height: fit-content;
     align-items: center;
     z-index: 5;
@@ -118,13 +115,11 @@
     position: relative;
     z-index: 10;
     margin: -78px 115.5px 160px 115.5px;
-    background: rgb(255, 255, 255);
+    background: transparent;
     height: fit-content;
     padding: 52px 153px;
     text-align: center;
     font-family: $mainFont;
-    display: none;
-    opacity: 0;
 
     .revelation1 {
       overflow: hidden;
@@ -188,7 +183,6 @@
     margin: -78px 115.5px 160px 115.5px;
     text-align: center;
 
-    // background: greenyellow;
     overflow: hidden;
 
     p {
@@ -202,22 +196,10 @@
     @keyframes primary {
       from {
         left: 100%;
-      // transform: translateX(100%);
       }
 
       to {
         left: -100%;
-      // transform: translateX(0%);
-      }
-    }
-
-    @keyframes secondary {
-      from {
-        left: 100%;
-      }
-
-      to {
-        left: 0%;
       }
     }
 
@@ -230,29 +212,14 @@
       height: 60px;
       overflow-x: hidden;
 
-      // background: red;
-      // transform: translateX(20%);
-      // width: fit-content;
-
 
       .primary--brandsection {
         width: inherit;
         height: inherit;
         position: absolute;
-        // background: grey;
         left: 100%;
         top: 0%;
         animation: primary 30s linear infinite;
-        // margin-right: 200px; 
-      }
-
-      .secondary--brandsection {
-        width: inherit;
-        height: inherit;
-        position: absolute;
-        left: 0%;
-        top: 0%;
-        // animation: secondary 10s linear infinite;
       }
 
       .brand {
@@ -360,50 +327,50 @@
 
 
 .prefooter {
-    height: fit-content;
-    margin-top: 160px;
-    background: #ADADAD;
-    text-align: center;
-    padding: 160px 100px;
-    font-family: $mainFont;
+  height: fit-content;
+  margin-top: 160px;
+  background: #ADADAD;
+  text-align: center;
+  padding: 160px 100px;
+  font-family: $mainFont;
 
 
-    #prefooter--text {
-        font-size: 64px;
-        font-weight: 700;
-        line-height: 96px;
-        margin-bottom: 24px;
-        position: relative;
-        // opacity: 0;
-        overflow: hidden;
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  #prefooter--text {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 96px;
+    margin-bottom: 24px;
+    position: relative;
+    // opacity: 0;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  button {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 600;
+    padding: 8px 24px 8px 24px;
+    background-color: #0D0D0D;
+    color: #dfdfdf;
+    border-left: #FC700A solid 2px;
+    border-right: #FC700A solid 2px;
+    cursor: pointer;
+    transition: border-top .3s ease-in, border-bottom .3s ease-in-out;
+    opacity: 0;
+    transform: translateX(200px);
+
+    &:hover {
+      border-top: #FC700A solid 2px;
+      border-bottom: #FC700A solid 2px;
+      transition: border-top .3s ease-in, border-bottom .3s ease-in-out;
     }
+  }
 
-    button {
-        font-size: 16px;
-        line-height: 28px;
-        font-weight: 600;
-        padding: 8px 24px 8px 24px;
-        background-color: #0D0D0D;
-        color: #dfdfdf;
-        border-left: #FC700A solid 2px;
-        border-right: #FC700A solid 2px;
-        cursor: pointer;
-        transition: border-top .3s ease-in, border-bottom .3s ease-in-out;
-        opacity: 0;
-        transform: translateX(200px);
-
-        &:hover {
-            border-top: #FC700A solid 2px;
-            border-bottom: #FC700A solid 2px;
-            transition: border-top .3s ease-in, border-bottom .3s ease-in-out;
-        }
-    }
-
-    .word {
-        transform: translateY(350px) skewY(10deg);
-        transition: transform .5s;
-    }
+  .word {
+    transform: translateY(350px) skewY(10deg);
+    transition: transform .5s;
+  }
 }
 
 
@@ -512,8 +479,28 @@
         margin-bottom: 16px;
       }
 
+
+
       div {
         margin-top: 16px;
+
+        @keyframes primaryM {
+          from {
+            left: 60%;
+          }
+
+          to {
+            left: -60%;
+          }
+        }
+
+
+        .primary--brandsection {
+          left: 60%;
+          animation: primaryM 30s linear infinite;
+        }
+
+
 
         .brand {
           width: 70px;
@@ -545,16 +532,25 @@
         }
       }
     }
+
+    .services--section2 {
+      div {
+        .services--section2--img {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
   }
 
   .prefooter {
     padding: 32px 16px;
 
     #prefooter--text {
-        font-size: 32px;
-        line-height: 48px;
+      font-size: 32px;
+      line-height: 48px;
     }
-}
+  }
 }
 
 

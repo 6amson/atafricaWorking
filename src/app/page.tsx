@@ -31,6 +31,7 @@ export default function Home() {
 
   // const [brands, setBrands] = useState([adobe, salesforce, airbnb, google, microsoft]);
   const homepageWords: Array<string> = ['Ideas', 'Breakthroughs', 'Innovations', 'Ventures'];
+  const isMediumScreen = useMediaQuery({ query: '(max-width: 856px)' });
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
 
@@ -63,22 +64,22 @@ export default function Home() {
       tlText1.set(container, { autoAlpha: 1 });
       tlText1.to(".brand--section1", {
         duration: 1,
-        opacity: 1,
+        background: 'white',
         stagger: {
           amount: 0.05
         }
       })
-      .to(container, {
-        duration: 1.8,
-        delay: .05,
-        y: 0,
-        opacity: 1,
-        stagger: {
-          amount: 0.05
-        },
+        .to(container, {
+          duration: 1.8,
+          delay: .05,
+          y: 0,
+          opacity: 1,
+          stagger: {
+            amount: 0.05
+          },
 
-        ease: "stepped.out"
-      })
+          ease: "stepped.out"
+        })
     });
 
     revelation2.forEach((container) => {
@@ -88,8 +89,8 @@ export default function Home() {
           toggleActions: "restart none none reset",
           // markers: true,
           scrub: true,
-          start: "top 70%",
-          end: "70% center",
+          start: "-40% center",
+          end: "20% center",
         }
       });
 
@@ -106,28 +107,31 @@ export default function Home() {
       })
     });
 
-    let tlText1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.services--section2',
-        toggleActions: "restart none none reset",
-        // markers: true,
-        scrub: true,
-        start: "30% center",
-        end: "70% center",
-      }
-    });
+    if (!isMediumScreen) {
+      
+      let tlText1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.services--section2',
+          toggleActions: "restart none none reset",
+          // markers: true,
+          scrub: true,
+          start: "-40% center",
+          end: "20% center",
+        }
+      });
 
-    tlText1.to('.services--section2--img', {
-      duration: 1.5,
-      delay: .05,
-      x: 0,
-      rotation: 360,
-      opacity: 1,
-      stagger: {
-        amount: 0.05
-      },
-      ease: "ease.out"
-    })
+      tlText1.to('.services--section2--img', {
+        duration: 1.5,
+        delay: .05,
+        x: 0,
+        rotation: 360,
+        opacity: 1,
+        stagger: {
+          amount: 0.05
+        },
+        ease: "ease.out"
+      })
+    }
 
 
     const tl1 = gsap.timeline();
@@ -160,7 +164,6 @@ export default function Home() {
         duration: 1,
         delay: 1,
         opacity: 1,
-        // height: "fit-content",
         ease: "power1.out",
         skewY: 0,
         stagger: {
@@ -177,7 +180,7 @@ export default function Home() {
       }, "-=2")
       .to(".brand--section1", {
         duration: 0,
-        display: "block",
+        // display: "block",
       });
 
     const word = new SplitType('#prefooter--text', { types: 'words' });
