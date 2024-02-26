@@ -159,8 +159,8 @@ export default function Home() {
       .to(".Herotext3", {
         duration: 1,
         delay: 1,
-        y: 0,
-        height: "fit-content",
+        opacity: 1,
+        // height: "fit-content",
         ease: "power1.out",
         skewY: 0,
         stagger: {
@@ -170,7 +170,7 @@ export default function Home() {
       .to(".homepage--background", {
         duration: 1,
         opacity: 1,
-        ease: "power2.in",
+        ease: "power3.out",
         stagger: {
           amount: 0.5
         }
@@ -213,7 +213,7 @@ export default function Home() {
       duration: 1.8,
       x: 0,
       opacity: 1,
-      ease: "steeped.out",
+      ease: "stepped.out",
       stagger: {
         amount: 0.5
       }

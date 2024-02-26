@@ -81,12 +81,13 @@
   .Herotext3 {
     display: flex;
     overflow: hidden;
-    transform: skewY(10deg);
+    // transform: skewY(10deg);
     position: relative;
-    transform: translateY(-50px);
-    height: 0;
+    // transform: translateY(-50px);
+    height: fit-content;
     align-items: center;
     z-index: 5;
+    opacity: 0;
 
     p {
       position: relative;
