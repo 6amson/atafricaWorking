@@ -133,13 +133,13 @@
       cursor: pointer;
       color: #ADADAD; 
       border-bottom: $mainColor;
-      transition: color .3s ease-in-out, border-bottom .3s ease-in-out;
+      transition: color .3s ease-in-out, border-bottom .5s ease-in-out;
 
 
       &:hover {
          color: black;
          border-bottom: #f8893a solid 1.5px;
-         transition: color .3s ease-in-out, border-bottom .3s ease-in-out;
+         transition: color .3s ease-in-out, border-bottom .5s ease-in-out;
       }
    }
 }
@@ -168,13 +168,13 @@
       width: fit-content;
       color: #ADADAD; 
       border-bottom: $mainColor;
-      transition: color .3s ease-in-out, border-bottom .3s ease-in-out;
+      transition: color .3s ease-in-out, border-bottom .5s ease-in-out;
 
 
       &:hover {
          color: black;
          border-bottom: #f8893a solid 1.5px;
-         transition: color .3s ease-in-out, border-bottom .3s ease-in-out;
+         transition: color .3s ease-in-out, border-bottom .5s ease-in-out;
       }
    }
 }

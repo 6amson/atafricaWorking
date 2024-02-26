@@ -55,13 +55,20 @@ export default function Home() {
           toggleActions: "restart none none reset",
           // markers: true,
           scrub: true,
-          start: "5% center",
-          end: "bottom center",
+          start: "-30% center",
+          end: "25% center",
         }
       });
 
       tlText1.set(container, { autoAlpha: 1 });
-      tlText1.to(container, {
+      tlText1.to(".brand--section1", {
+        duration: 1,
+        opacity: 1,
+        stagger: {
+          amount: 0.05
+        }
+      })
+      .to(container, {
         duration: 1.8,
         delay: .05,
         y: 0,
@@ -162,11 +169,10 @@ export default function Home() {
       })
       .to(".homepage--background", {
         duration: 1,
-        x: 0,
-        width: "100vw",
-        ease: "power2",
+        opacity: 1,
+        ease: "power2.in",
         stagger: {
-          amount: 0.3
+          amount: 0.5
         }
       }, "-=2")
       .to(".brand--section1", {
@@ -280,14 +286,6 @@ export default function Home() {
               <Image src={google} alt='google' className='google brand' />
               <Image src={microsoft} alt='microsoft' className='microsoft brand' />
             </div>
-
-            {/* <div className='secondary--brandsection'>
-              <Image src={adobe} alt='adobe svg' className='adobe brand' />
-              <Image src={salesforce} alt='saleforce svg' className='salesforce brand' />
-              <Image src={airbnb} alt='airbnb svg' className='airbnb brand' />
-              <Image src={google} alt='google' className='google brand' />
-              <Image src={microsoft} alt='microsoft' className='microsoft brand' />
-            </div> */}
           </div>
         </div>
       </div>

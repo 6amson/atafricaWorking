@@ -13,12 +13,12 @@
 
   .homepage--background {
     position: absolute;
-    width: 0;
+    width: 100vw;
     height: 100%;
-    transform: translateX(-300px);
     object-fit: cover;
     object-position: center 0;
     z-index: 1;
+    opacity: 0;
   }
 }
 
@@ -30,7 +30,6 @@
   place-items: center;
   position: relative;
   height: fit-content;
-  // background: greenyellow;
 
 
   .Herotext1 {
@@ -124,6 +123,7 @@
     text-align: center;
     font-family: $mainFont;
     display: none;
+    opacity: 0;
 
     .revelation1 {
       overflow: hidden;
@@ -187,6 +187,9 @@
     margin: -78px 115.5px 160px 115.5px;
     text-align: center;
 
+    // background: greenyellow;
+    overflow: hidden;
+
     p {
       font-weight: 600;
       margin-bottom: 80px;
@@ -197,11 +200,13 @@
 
     @keyframes primary {
       from {
-        left: 0%;
+        left: 100%;
+      // transform: translateX(100%);
       }
 
       to {
         left: -100%;
+      // transform: translateX(0%);
       }
     }
 
@@ -224,13 +229,19 @@
       height: 60px;
       overflow-x: hidden;
 
+      // background: red;
+      // transform: translateX(20%);
+      // width: fit-content;
+
+
       .primary--brandsection {
         width: inherit;
         height: inherit;
         position: absolute;
-        left: 0%;
+        // background: grey;
+        left: 100%;
         top: 0%;
-        // animation: primary 10s linear infinite;
+        animation: primary 30s linear infinite;
         // margin-right: 200px; 
       }
 
