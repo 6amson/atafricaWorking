@@ -20,36 +20,49 @@
         margin-bottom: 80px;
     }
 
-    div {
+    .portfolio--section--div {
         display: flex;
-        height: fit-content;
+        flex-wrap: nowrap;
         gap: 32px;
-        place-items: start;
-        flex-wrap: wrap;
         justify-content: center;
-        transition: gap .3s ease-in-out;
+        overflow: hidden;
+        align-items: center;
+        scroll-behavior: smooth;
+        overflow: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
 
-
-        &:hover {
-            gap: 16px;
+        div {
+            display: flex;
+            height: fit-content;
+            gap: 32px;
+            place-items: start;
+            // flex-wrap: wrap;
+            justify-content: center;
             transition: gap .3s ease-in-out;
 
+
+            &:hover {
+                gap: 16px;
+                transition: gap .3s ease-in-out;
+
+                .ft9ja--mockup1 {
+                    transform: scale(1.02);
+                    transition: transform .3s ease-in-out;
+                }
+            }
+
             .ft9ja--mockup1 {
-                transform: scale(1.02);
+                overflow: hidden;
+                min-width: fit-content;
+                height: 594px;
                 transition: transform .3s ease-in-out;
             }
-        }
 
-        .ft9ja--mockup1 {
-            overflow: hidden;
-            min-width: fit-content;
-            height: 594px;
-            transition: transform .3s ease-in-out;
-        }
-
-        .ft9ja--mockup2 {
-            background: white;
-            height: 554px;
+            .ft9ja--mockup2 {
+                background: white;
+                height: 554px;
+            }
         }
     }
 }

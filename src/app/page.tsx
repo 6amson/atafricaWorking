@@ -108,7 +108,7 @@ export default function Home() {
     });
 
     if (!isMediumScreen) {
-      
+
       let tlText1 = gsap.timeline({
         scrollTrigger: {
           trigger: '.services--section2',
@@ -188,10 +188,10 @@ export default function Home() {
       scrollTrigger: {
         trigger: '#prefooter--text',
         toggleActions: "restart none none reset",
-        // markers: true,
+        markers: true,
         scrub: true,
-        start: "top top",
-        end: "bottom top",
+        start: "-70% center",
+        end: "bottom center",
       }
     })
 
