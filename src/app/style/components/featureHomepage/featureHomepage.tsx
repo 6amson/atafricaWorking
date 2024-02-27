@@ -14,17 +14,18 @@ import feature1b from '../../../../../assets/ft9ja--mockup--details.svg';
 import { useMediaQuery } from 'react-responsive';
 
 
-interface Item {
-    items: Array<{
-        id: number;
-        image1: any;
-        image2: any;
-    }>
+interface FeatureItem {
+    id: number;
+    image1: any;
+    image2: any;
 }
 
+interface itemsProps {
+    items: FeatureItem[];
+}
 
-export default function FeatureHomepage(items: Item) {
-    const [slideWidth, setSlideWidth] = useState(0);
+const FeatureHomepage: React.FC<itemsProps> = ({ items }) => {
+    // const [slideWidth, setSlideWidth] = useState(0);
     const isMediumScreen = useMediaQuery({ query: '(max-width: 665px)' });
 
 
@@ -72,7 +73,7 @@ export default function FeatureHomepage(items: Item) {
             {isMediumScreen ?
                 <div>
                     {
-                        items.items.map((item) =>
+                        items.map((item) =>
                             <div key={item.id} className='slide'>
                                 <div className='ft9ja--mockup1' ><Image src={item.image1} alt='ft9ja mockup' className='ft9ja--mockup1img' /></div>
                                 <div className='ft9ja--mockup2'><Image src={item.image2} alt='ft9ja mockup details' className='ft9ja--mockup2img' /> </div>
@@ -83,7 +84,7 @@ export default function FeatureHomepage(items: Item) {
                 :
                 <Slider {...sliderSettings} className='portfolio--section--div slick_carousel'>
                     {
-                        items.items.map((item) =>
+                        items.map((item) =>
                             <div key={item.id} className='slide'>
                                 <div className='ft9ja--mockup1' ><Image src={item.image1} alt='ft9ja mockup' className='ft9ja--mockup1img' /></div>
                                 <div className='ft9ja--mockup2'><Image src={item.image2} alt='ft9ja mockup details' className='ft9ja--mockup2img' /> </div>
@@ -95,3 +96,5 @@ export default function FeatureHomepage(items: Item) {
         </div >
     )
 }
+
+export default FeatureHomepage;
