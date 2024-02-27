@@ -26,7 +26,7 @@
     p:nth-child(3),
     p:nth-child(4) {
         font-size: 32px;
-        font-weight: 700;
+        font-weight: 400;
         line-height: 48px;
         margin-bottom: 32px;
     }
@@ -60,16 +60,28 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        gap: 16px;
 
 
         .culture--media--div {
             cursor: pointer;
             width: fit-content;
-            // background: green;
+            flex: 1;
 
-            div {
+
+            .culture--photo--div {
                 width: fit-content;
-                // background: red;
+                height: 241px;
+                overflow: hidden;
+                transition: height .5s ease-in;
+                object-fit: fill;
+                object-position: (center);
+                margin-right: 16px;
+
+                .culture--photo {
+                    object-fit: cover;
+                    object-position: center;
+                }
             }
 
             p:nth-child(1) {
@@ -103,11 +115,11 @@
     //     background: chartreuse;
     //     width: fit-content;
 
-        // .culture--photo {
-        //     width: 100%;
-        // }
+    // .culture--photo {
+    //     width: 100%;
+    // }
 
-       
+
     // }
 
     // .about--culturepage--media .culture--media--div:hover  {
@@ -132,7 +144,6 @@
 
 
 }
-
 
 .about--teampage {
     padding: 0px 100px;
@@ -166,6 +177,17 @@
             background: rgb(250, 250, 250);
             margin-bottom: 24px;
             padding: 16px;
+
+            .team--photos {
+                filter: grayscale(100%);
+                cursor: pointer;
+                transition: filter .5s ease-in;
+
+                &:hover {
+                    filter: grayscale(0%);
+                    transition: filter .5s ease-in;
+                }
+            }
 
             p:nth-child(2) {
                 font-size: 22px;
@@ -208,7 +230,7 @@
         p:nth-child(3),
         p:nth-child(4) {
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 400;
             line-height: 30px;
             letter-spacing: 0.08em;
         }
@@ -226,20 +248,27 @@
         .about--culturepage--media {
 
             .culture--media--div {
-                width: 100%;
+                min-width: 100%;
+                flex-direction: column;
                 margin-bottom: 24px;
 
-                .culture--photo {
+                .culture--photo--div {
                     width: inherit;
+
+                    .culture--photo {
+                        width: inherit;
+                    }
+
+                    // height: 241px;
                 }
 
-                p:nth-child(2) {
+                p:nth-child(3) {
                     font-size: 22px;
                     font-weight: 600;
                     line-height: 34px;
                 }
 
-                p:nth-child(3) {
+                p:nth-child(4) {
                     font-size: 16px;
                     font-weight: 400;
                     line-height: 26px;
@@ -271,6 +300,7 @@
 @media(max-width: 480px) {
 
     .about--heropage {
+        padding: 80px 16px;
 
         p:nth-child(3),
         p:nth-child(4) {
@@ -281,4 +311,22 @@
         }
     }
 
+
+    .about--culturepage {
+        padding: 32px 16px;
+
+        .about--culturepage--para2 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 48px;
+        }
+
+        .about--culturepage--media {
+
+            .culture--media--div {
+                width: 100%;
+            }
+        }
+
+    }
 }
