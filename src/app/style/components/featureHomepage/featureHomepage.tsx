@@ -3,31 +3,38 @@
 import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import mockup1 from '../../../../../assets/Ft9ja--mockup.svg';
-import mockup2 from '../../../../../assets/ft9ja--mockup--details.svg';
 import './featureHomepage.scss';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import feature1a from '../../../../../assets/Ft9ja--mockup.svg';
 import feature1b from '../../../../../assets/ft9ja--mockup--details.svg';
+import feature2b from '../../../../../assets/robo--mockup--details.svg';
+import feature2a from '../../../../../assets/robo--mockup.svg';
 import { useMediaQuery } from 'react-responsive';
 
 
-interface FeatureItem {
-    id: number;
-    image1: any;
-    image2: any;
-}
-
-interface itemsProps {
-    items: FeatureItem[];
-}
-
-const FeatureHomepage: React.FC<itemsProps> = ({ items }) => {
+export default function FeatureHomepage () {
     // const [slideWidth, setSlideWidth] = useState(0);
     const isMediumScreen = useMediaQuery({ query: '(max-width: 665px)' });
 
+    const featureStartup = [
+        {
+          id: 1,
+          image1: feature1a,
+          image2: feature1b,
+        },
+        {
+          id: 2,
+          image1: feature2a,
+          image2: feature2b,
+        },
+        {
+          id: 3,
+          image1: feature1a,
+          image2: feature1b,
+        },
+      ];
 
     const sliderSettings = {
         centerPadding: '30px',
@@ -73,7 +80,7 @@ const FeatureHomepage: React.FC<itemsProps> = ({ items }) => {
             {isMediumScreen ?
                 <div>
                     {
-                        items.map((item) =>
+                        featureStartup.map((item) =>
                             <div key={item.id} className='slide'>
                                 <div className='ft9ja--mockup1' ><Image src={item.image1} alt='ft9ja mockup' className='ft9ja--mockup1img' /></div>
                                 <div className='ft9ja--mockup2'><Image src={item.image2} alt='ft9ja mockup details' className='ft9ja--mockup2img' /> </div>
@@ -84,7 +91,7 @@ const FeatureHomepage: React.FC<itemsProps> = ({ items }) => {
                 :
                 <Slider {...sliderSettings} className='portfolio--section--div slick_carousel'>
                     {
-                        items.map((item) =>
+                        featureStartup.map((item) =>
                             <div key={item.id} className='slide'>
                                 <div className='ft9ja--mockup1' ><Image src={item.image1} alt='ft9ja mockup' className='ft9ja--mockup1img' /></div>
                                 <div className='ft9ja--mockup2'><Image src={item.image2} alt='ft9ja mockup details' className='ft9ja--mockup2img' /> </div>
@@ -96,5 +103,3 @@ const FeatureHomepage: React.FC<itemsProps> = ({ items }) => {
         </div >
     )
 }
-
-export default FeatureHomepage;

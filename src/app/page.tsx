@@ -21,10 +21,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useMediaQuery } from 'react-responsive';
 import SplitType from 'split-type';
-import feature1a from '../../assets/Ft9ja--mockup.svg';
-import feature1b from '../../assets/ft9ja--mockup--details.svg';
-import feature2b from '../../assets/robo--mockup--details.svg';
-import feature2a from '../../assets/robo--mockup.svg';
+
 
 
 
@@ -230,23 +227,6 @@ export default function Home() {
 
   }, [])
 
-  const featureStartup = [
-    {
-      id: 1,
-      image1: feature1a,
-      image2: feature1b,
-    },
-    {
-      id: 2,
-      image1: feature2a,
-      image2: feature2b,
-    },
-    {
-      id: 3,
-      image1: feature1a,
-      image2: feature1b,
-    },
-  ];
 
   const services = [
     {
@@ -342,7 +322,7 @@ export default function Home() {
         </div>
       </div>
 
-      <FeatureHomepage items={featureStartup} />
+      <FeatureHomepage />
 
       <StatsHomepage />
 

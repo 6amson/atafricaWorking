@@ -47,7 +47,7 @@ export default function Profile() {
         },
 
     ]
-    
+
     return (
         <main className="profile--container">
             <div className="hero--profile--container">
@@ -61,7 +61,7 @@ export default function Profile() {
                 </div>
             </div>
             <StatsHomepage />
-            <FeatureHomepage />
+            <FeatureHomepage/>
             <div className="industry--section">
                 <div className="industry--section1">
                     <div>
