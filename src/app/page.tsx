@@ -34,6 +34,7 @@ export default function Home() {
   // const [brands, setBrands] = useState([adobe, salesforce, airbnb, google, microsoft]);
   const homepageWords: Array<string> = ['Ideas', 'Breakthroughs', 'Innovations', 'Ventures'];
   const isMediumScreen = useMediaQuery({ query: '(max-width: 856px)' });
+  const isLargeScreen = useMediaQuery({ query: '(min-width: 856px)' });
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
 
@@ -84,30 +85,59 @@ export default function Home() {
         })
     });
 
-    revelation2.forEach((container) => {
-      let tlText1 = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.services--section2',
-          toggleActions: "restart none none reset",
-          // markers: true,
-          scrub: true,
-          start: "-40% center",
-          end: "20% center",
-        }
-      });
+    if (isLargeScreen) {
+      revelation2.forEach((container) => {
+        let tlText1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.services--section2',
+            toggleActions: "restart none none reset",
+            // markers: true,
+            scrub: true,
+            start: "-40% center",
+            end: "20% center",
+          }
+        });
 
-      tlText1.set(container, { autoAlpha: 1 });
-      tlText1.to(container, {
-        duration: 1.8,
-        // delay: .05,
-        y: 0,
-        opacity: 1,
-        stagger: {
-          amount: 0.05
-        },
-        ease: "ease.out"
-      })
-    });
+        tlText1.set(container, { autoAlpha: 1 });
+        tlText1.to(container, {
+          duration: 1.8,
+          // delay: .05,
+          y: 0,
+          opacity: 1,
+          stagger: {
+            amount: 0.05
+          },
+          ease: "ease.out"
+        })
+      });
+    } else {
+      revelation2.forEach((container) => {
+        let tlText1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.services--section1',
+            toggleActions: "restart none none reset",
+            // markers: true,
+            scrub: true,
+            start: "-40% center",
+            end: "20% center",
+          }
+        });
+
+        tlText1.set(container, { autoAlpha: 1 });
+        tlText1.to(container, {
+          duration: 1.8,
+          // delay: .05,
+          y: 0,
+          opacity: 1,
+          stagger: {
+            amount: 0.05
+          },
+          ease: "ease.out"
+        })
+      });
+    }
+
+
 
     if (!isMediumScreen) {
 
