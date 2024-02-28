@@ -59,26 +59,29 @@
     .about--culturepage--media {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 16px;
-
+        flex-wrap: nowrap;
+        flex: 1;
 
         .culture--media--div {
             cursor: pointer;
             width: fit-content;
-            flex: 1;
+            // flex: 1; 
+            width: max-content;
+
 
 
             .culture--photo--div {
-                width: fit-content;
+                width: 100%;
+                // background: red;
                 height: 241px;
                 overflow: hidden;
                 transition: height .5s ease-in;
-                object-fit: fill;
-                object-position: (center);
+                // object-fit: fill;
+                object-position: center;
                 margin-right: 16px;
 
                 .culture--photo {
+                    height: 100%;
                     object-fit: cover;
                     object-position: center;
                 }
@@ -96,53 +99,12 @@
                 font-weight: 400;
                 line-height: 30px;
                 letter-spacing: 0.08em;
+                width: 72%;
             }
         }
 
 
     }
-
-    // .about--culturepage--media:hover .culture--media--div{
-    //     background: cyan;
-    //     // width: 100px;
-
-    //     // .culture--photo{
-    //     //     width: 60px;
-    //     // }
-    // }
-
-    // .culture--media--div:hover {
-    //     background: chartreuse;
-    //     width: fit-content;
-
-    // .culture--photo {
-    //     width: 100%;
-    // }
-
-
-    // }
-
-    // .about--culturepage--media .culture--media--div:hover  {
-    //     background: orange;
-
-    //     .about--culturepage--media{
-    //         background: greenyellow;
-    //     }
-    // }
-
-    // .culture--media--div:has(+ .culture--media--div:hover) {
-    //     background: blue;
-    // }
-
-    // .culture--media--div:has(~ :not(div:hover))  {
-    //     background: blue;
-    // }
-
-    // .culture--media--div:hover~.culture--media--div:not(:hover) {
-    //     background: #44c47e;
-    // }
-
-
 }
 
 .about--teampage {
@@ -211,7 +173,15 @@
 
 
 
+@media(max-width: 1451px) {
+    .about--culturepage {
+        .about--culturepage--media {
+        flex-wrap: wrap;
+        gap: 32px;
+        }
+    }
 
+}
 
 
 

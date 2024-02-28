@@ -23,7 +23,7 @@ import { useMediaQuery } from 'react-responsive';
 
 
 export default function About() {
-    const isLargeScreen = useMediaQuery({ query: '(min-width: 1300px)' });
+    const isLargeScreen = useMediaQuery({ query: '(min-width: 1452px)' });
 
 
     useEffect(() => {
