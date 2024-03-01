@@ -1,14 +1,96 @@
+"use client"
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import "./contact.scss";
 import locationIcon from "../../../assets/locationIcon.svg";
 import emailIcon from "../../../assets/emailIcon.svg";
 import phoneIcon from "../../../assets/phoneIcon.svg";
 import Footer from "../style/components/footer/footer";
+import checkIcon from "../../../assets/greenCheckIcon.svg";
+import closeModalIcon from "../../../assets/closeModalIcon.svg";
+import React from 'react';
+import Modal from 'react-modal';
+import ReactModal from "react-modal";
+import { useMediaQuery } from 'react-responsive';
 
 
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        minWidth: "800px",
+        // background: '#cdcdcd',
+    },
+};
 
+const customStylesM = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        minWidth: "350px",
+        // background: '#cdcdcd',
+    },
+};
 
 export default function Contact() {
+    const isMediumScreen = useMediaQuery({ query: '(max-width: 856px)' });
+
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+
+    useEffect(() => {
+        const root = document.getElementById('root');
+        ReactModal.setAppElement(root ? root : "root");
+    }, []);
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function afterOpenModal() {
+        const imgModal = document.getElementById('imgModal');
+        const imgModal2 = document.getElementById('imgModal2');
+        const imgModaldiv2 = document.getElementById('imgModaldiv2');
+        const imgModalText1 = document.getElementById('imgModalText1');
+        const imgModalText2 = document.getElementById('imgModalText2');
+
+        if (imgModal && imgModal2 && imgModaldiv2 && imgModalText1 && imgModalText2) {
+            imgModal.style.marginBottom = '8px';
+            imgModal.style.width = '100%';
+            imgModal.style.display = 'flex';
+            imgModal.style.justifyContent = 'end';
+            imgModal.style.opacity = '80%';
+
+            imgModal2.style.marginBottom = '32px';
+            imgModal2.style.display = 'flex';
+            imgModal2.style.opacity = '80%';
+
+            imgModaldiv2.style.display = 'flex';
+            imgModaldiv2.style.width = '100%';
+            imgModaldiv2.style.flexDirection = 'column';
+            imgModaldiv2.style.justifyContent = 'center';
+            imgModaldiv2.style.alignItems = 'center';
+
+            imgModalText2.classList.add('defineFontType2');
+            imgModalText1.classList.add('defineFontType1');
+
+
+        }
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
 
     const contactInfo = [
         {
@@ -35,7 +117,21 @@ export default function Contact() {
     ]
 
     return (
-        <main>
+        <main id="root">
+            <Modal
+                isOpen={modalIsOpen}
+                onAfterOpen={afterOpenModal}
+                onRequestClose={closeModal}
+                style={isMediumScreen ? customStylesM : customStyles}
+                contentLabel="Example Modal"
+            >
+                <div id="imgModal"><Image onClick={closeModal} src={closeModalIcon} alt="close modal icon" /></div>
+                <div id="imgModaldiv2">
+                    <p id="imgModalText1">Thanks for reaching out!</p>
+                    <div id="imgModal2"><Image src={checkIcon} alt="check icon" /></div>
+                    <p id="imgModalText2">Message sent successfully</p>
+                </div>
+            </Modal>
             <div className="main">
                 <div className="main--sub1">
                     <p>Get in touch!</p>
@@ -85,17 +181,17 @@ export default function Contact() {
                         </div>
                     </div>
 
-                    <label htmlFor="message">Name:</label>
+                    <label htmlFor="message">Message:</label>
                     <textarea id="message" name="message" placeholder="Enter your message here" rows={4} cols={50}></textarea>
 
                     <div id="submit--div">
-                        <input type="submit" value="SEND MESSSAGE" id="submitButton"></input>
+                        <input onClick={openModal} type="submit" value="SEND MESSSAGE" id="submitButton"></input>
                     </div>
                 </form>
 
             </div>
 
-            <Footer/>
+            <Footer />
         </main >
     )
 }

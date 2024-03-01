@@ -9,9 +9,18 @@
    margin-top: 22px;
    margin-bottom: 20px;
 
+   // Link{
+   //    background: red;
+   //    z-index: 1000;
+   //    width: 200px;
+   //    height: 300px;
+   // }
+
    .logo {
+      position: relative;
       cursor: pointer;
       margin-left: 100px;
+      z-index: 1000;
    }
 
    .logoDiv {
@@ -128,10 +137,16 @@
    overflow: hidden;
    animation: fadeInAnimation .5s;
 
+   Link{
+      position: relative;
+      z-index: 100;
+      
+   }
+
 
    P {
       cursor: pointer;
-      color: #ADADAD; 
+      color: #ADADAD;
       border-bottom: $mainColor;
       transition: color .3s ease-in-out, border-bottom .5s ease-in-out;
 
@@ -166,7 +181,7 @@
       cursor: pointer;
       margin-bottom: 24px;
       width: fit-content;
-      color: #ADADAD; 
+      color: #ADADAD;
       border-bottom: $mainColor;
       transition: color .3s ease-in-out, border-bottom .5s ease-in-out;
 
@@ -236,7 +251,7 @@
       width: 100%;
       // background: red;
 
-      p{
+      p {
          margin-bottom: 24px;
          width: fit-content;
       }

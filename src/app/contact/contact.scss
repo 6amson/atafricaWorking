@@ -171,6 +171,29 @@
     }
 }
 
+.defineFontType2 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    font-family: $mainFont;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.defineFontType1 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: center;
+    font-family: $mainFont;
+    margin-bottom: 16px;
+}
+
 
 
 
@@ -234,7 +257,7 @@
         }
 
         .main--sub2 {
-    
+
             .main--sub2--div {
                 width: 100%;
             }

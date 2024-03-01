@@ -2,6 +2,7 @@
 
 import "./header.scss";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import Logo from "../../../../../assets/logoAtafrica.svg";
 import Menu from "../../../../../assets/menu_icon.svg";
@@ -37,7 +38,7 @@ export default function Header() {
     return (
         <main>
             <div className="header">
-                <Image className="logo" src={Logo} alt="ATAfrica logo" />
+                <Link href="/" className="logo"><Image src={Logo} alt="ATAfrica logo" /></Link>
                 {/* <p>{isMenuHovered ? 'YES' : 'NO'}</p> */}
                 <div className="logoDiv">
                     {isMediumScreen ? <div className="logodivv"
@@ -70,10 +71,10 @@ export default function Header() {
                     display: isMenuHovered ? "flex" : 'flex',
                 }}
             >
-                <p>Profile</p>
-                <p>Who we are</p>
-                <p>Career</p>
-                <p>Contact</p>
+                <Link href='/profile' style={{ textDecoration: 'none', color: 'inherit' }}><p>Profile</p></Link>
+                <Link href='/about' style={{ textDecoration: 'none', color: 'inherit' }}><p>Who we are</p></Link>
+                <Link href='/careers' style={{ textDecoration: 'none', color: 'inherit' }}><p>Career</p></Link>
+                <Link href='/contact' style={{ textDecoration: 'none', color: 'inherit' }}><p>Contact</p></Link>
             </div>
         </main>
     )
