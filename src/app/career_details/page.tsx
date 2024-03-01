@@ -17,7 +17,7 @@ import ReactModal from "react-modal";
 import { useMediaQuery } from 'react-responsive';
 
 const closeIconStyles = {
-cursor: 'pointer',
+    cursor: 'pointer',
 }
 
 const customStyles = {
@@ -134,7 +134,7 @@ export default function CareersDetails() {
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
-                style={isMediumScreen? customStylesM : customStyles}
+                style={isMediumScreen ? customStylesM : customStyles}
                 contentLabel="Example Modal"
             >
                 <div id="imgModal"><Image style={closeIconStyles} onClick={closeModal} src={closeModalIcon} alt="close modal icon" /></div>
@@ -260,6 +260,7 @@ export default function CareersDetails() {
                                 <div className="resume--upload--action--div">
                                     {resumeUploadOptions.slice(0, 2).map((resumeUploadOption) => (
                                         <UploadOptions
+                                            id={resumeUploadOption.id}
                                             handleClick={resumeUploadOption.handleClick}
                                             className={resumeUploadOption.class}
                                             icon={resumeUploadOption.icon}
@@ -275,6 +276,7 @@ export default function CareersDetails() {
                                 <div className="resume--upload--action--div">
                                     {resumeUploadOptions.map((resumeUploadOption) => (
                                         <UploadOptions
+                                            id={resumeUploadOption.id}
                                             handleClick={resumeUploadOption.handleClick}
                                             className={resumeUploadOption.class}
                                             icon={resumeUploadOption.icon}
