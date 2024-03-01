@@ -284,12 +284,10 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            // background: red;
             min-width: 350px;
             width: fit-content;
             flex: 1;
             gap: 16px;
-            // margin-bottom: 16px;
 
             .resume--upload--action--divv{
                 text-decoration: none;
@@ -300,17 +298,15 @@
             }
 
             div {
-                // background: blue;
                 cursor: pointer;
                 padding: 8px 16px;
                 border: solid 1px #c5c5c5;
                 border-radius: 100px;
                 display: flex;
-                outline: none;
                 transition: border .5s ease-in;
 
 
-                &:hover {
+                &:hover:not(.resume--upload--action--divv) {
                     border: solid 1px #FC700A;
                     transition: border .5s ease-in;
                 }
@@ -336,7 +332,6 @@
 
         .resume--upload--action--div:first-child {
             max-width: 500px;
-            // width: 80%;
         }
     }
 }
