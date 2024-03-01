@@ -291,6 +291,14 @@
             gap: 16px;
             // margin-bottom: 16px;
 
+            .resume--upload--action--divv{
+                text-decoration: none;
+                border: transparent;
+                padding: 0;
+                border: none;
+                outline: none;
+            }
+
             div {
                 // background: blue;
                 cursor: pointer;
@@ -298,6 +306,7 @@
                 border: solid 1px #c5c5c5;
                 border-radius: 100px;
                 display: flex;
+                outline: none;
                 transition: border .5s ease-in;
 
 

@@ -259,13 +259,14 @@ export default function CareersDetails() {
                                 <p className="resume--upload--cont--text1">Resume<span>*</span></p>
                                 <div className="resume--upload--action--div">
                                     {resumeUploadOptions.slice(0, 2).map((resumeUploadOption) => (
-                                        <UploadOptions
-                                            id={resumeUploadOption.id}
-                                            handleClick={resumeUploadOption.handleClick}
-                                            className={resumeUploadOption.class}
-                                            icon={resumeUploadOption.icon}
-                                            label={resumeUploadOption.label}
-                                        />
+                                        <div className="resume--upload--action--divv" key={resumeUploadOption.id}>
+                                            <UploadOptions
+                                                handleClick={resumeUploadOption.handleClick}
+                                                className={resumeUploadOption.class}
+                                                icon={resumeUploadOption.icon}
+                                                label={resumeUploadOption.label}
+                                            />
+                                        </div>
                                     ))}
                                 </div>
 
@@ -275,13 +276,14 @@ export default function CareersDetails() {
                                 <p className="resume--upload--cont--text1">Cover letter</p>
                                 <div className="resume--upload--action--div">
                                     {resumeUploadOptions.map((resumeUploadOption) => (
-                                        <UploadOptions
-                                            id={resumeUploadOption.id}
-                                            handleClick={resumeUploadOption.handleClick}
-                                            className={resumeUploadOption.class}
-                                            icon={resumeUploadOption.icon}
-                                            label={resumeUploadOption.label}
-                                        />
+                                        <div className="resume--upload--action--divv" key={resumeUploadOption.id}>
+                                            <UploadOptions
+                                                handleClick={resumeUploadOption.handleClick}
+                                                className={resumeUploadOption.class}
+                                                icon={resumeUploadOption.icon}
+                                                label={resumeUploadOption.label}
+                                            />
+                                        </div>
                                     ))}
                                 </div>
                                 <p className="resume--upload--cont--text11">(File type: pdf, doc, docx, txt, rtf)</p>
