@@ -57,7 +57,8 @@ export default function CareersDetails() {
         const root = document.getElementById('root');
         ReactModal.setAppElement(root ? root : "root");
     }, []);
-    function openModal() {
+    function openModal(e: any) {
+        e.preventDefault();
         setIsOpen(true);
     }
 
