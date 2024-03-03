@@ -8,6 +8,7 @@ import googledriveupload from "../../../assets/googledriveuploadIcon.svg";
 import manualupload from "../../../assets/manualuploadIcon.svg";
 import checkIcon from "../../../assets/greenCheckIcon.svg";
 import closeModalIcon from "../../../assets/closeModalIcon.svg";
+import filenameIcon from "../../../assets/filenameIcon.svg";
 import Image from "next/image";
 import UploadOptions from "./uploadOptions";
 import React from 'react';
@@ -51,12 +52,22 @@ export default function CareersDetails() {
     const isMediumScreen = useMediaQuery({ query: '(max-width: 856px)' });
 
     const [modalIsOpen, setIsOpen] = useState(false);
+    const [fileName, setFileName] = useState('');
+    const [inputState, setInputState] = useState(true);
+    const [inputState2, setInputState2] = useState(true);
+    const [inputLoaderState, setInputLoaderState] = useState(false);
+    const [inputLoaderState2, setInputLoaderState2] = useState(true);
+    const [inputTextareaState, setTextareaState] = useState(true);
+
+
+
 
 
     useEffect(() => {
         const root = document.getElementById('root');
         ReactModal.setAppElement(root ? root : "root");
     }, []);
+
     function openModal(e: any) {
         e.preventDefault();
         setIsOpen(true);
@@ -103,6 +114,17 @@ export default function CareersDetails() {
 
     const handleManualEntry = () => {
         alert('manual upload')
+    }
+
+    const closeFileUpload = () => {
+        setInputState(false)
+        setInputLoaderState(false)
+    }
+
+    const closeFileUpload2 = () => {
+        setInputState2(false)
+        setInputLoaderState2(false)
+        setTextareaState(false)
     }
 
     const resumeUploadOptions = [
@@ -259,7 +281,7 @@ export default function CareersDetails() {
                             <div className="resume--upload--cont">
                                 <p className="resume--upload--cont--text1">Resume<span>*</span></p>
                                 <div className="resume--upload--action--div">
-                                    {resumeUploadOptions.slice(0, 2).map((resumeUploadOption) => (
+                                    {!inputState ? resumeUploadOptions.slice(0, 2).map((resumeUploadOption) => (
                                         <div className="resume--upload--action--divv" key={resumeUploadOption.id}>
                                             <UploadOptions
                                                 handleClick={resumeUploadOption.handleClick}
@@ -268,7 +290,17 @@ export default function CareersDetails() {
                                                 label={resumeUploadOption.label}
                                             />
                                         </div>
-                                    ))}
+                                    )) : inputLoaderState ? <div className="outer--loader--div">
+                                        <div className="inner--loader--div">
+                                            <div className="loader--div"></div>
+                                        </div>
+                                        <div id="loader--closer"><Image id="loader--closer--icon" onClick={closeFileUpload} width={20} height={20} src={closeModalIcon} alt="close fileupload icon" /></div>
+                                    </div> :
+                                        <div className="filename--div">
+                                            <div><Image id="loader--closer--icon" onClick={closeFileUpload} width={20} height={20} src={filenameIcon} alt="file icon" /></div>
+                                            <p>{fileName} samson.pdf</p>
+                                            <div id="loader--closer"><Image id="loader--closer--icon" onClick={closeFileUpload} width={20} height={20} src={closeModalIcon} alt="close fileupload icon" /></div>
+                                        </div>}
                                 </div>
 
                                 <p className="resume--upload--cont--text11">(File type: pdf, doc, docx, txt, rtf)</p>
@@ -276,7 +308,7 @@ export default function CareersDetails() {
                             <div className="resume--upload--cont">
                                 <p className="resume--upload--cont--text1">Cover letter</p>
                                 <div className="resume--upload--action--div">
-                                    {resumeUploadOptions.map((resumeUploadOption) => (
+                                    {!inputState2 ? resumeUploadOptions.map((resumeUploadOption) => (
                                         <div className="resume--upload--action--divv" key={resumeUploadOption.id}>
                                             <UploadOptions
                                                 handleClick={resumeUploadOption.handleClick}
@@ -285,7 +317,19 @@ export default function CareersDetails() {
                                                 label={resumeUploadOption.label}
                                             />
                                         </div>
-                                    ))}
+                                    )) : !inputLoaderState2 && inputTextareaState ?
+                                        <textarea id="message" name="message" rows={4} cols={50}></textarea>
+                                        : inputLoaderState2 ? <div className="outer--loader--div">
+                                            <div className="inner--loader--div">
+                                                <div className="loader--div"></div>
+                                            </div>
+                                            <div id="loader--closer"><Image id="loader--closer--icon" onClick={closeFileUpload2} width={20} height={20} src={closeModalIcon} alt="close fileupload icon" /></div>
+                                        </div> :
+                                            <div className="filename--div">
+                                                <div><Image id="loader--closer--icon" onClick={closeFileUpload} width={20} height={20} src={filenameIcon} alt="file icon" /></div>
+                                                <p>{fileName} samson.pdf</p>
+                                                <div id="loader--closer"><Image id="loader--closer--icon" onClick={closeFileUpload} width={20} height={20} src={closeModalIcon} alt="close fileupload icon" /></div>
+                                            </div>}
                                 </div>
                                 <p className="resume--upload--cont--text11">(File type: pdf, doc, docx, txt, rtf)</p>
                             </div>

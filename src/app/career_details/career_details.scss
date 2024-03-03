@@ -134,7 +134,6 @@
 }
 
 .application--container {
-    // background: red;
     margin: 80px 100px 80px 100px;
     width: 100%;
 
@@ -145,6 +144,7 @@
         letter-spacing: 0.04em;
         text-align: center;
         padding: 32px 0;
+        width: 100%;
         border-top: solid 1px #adadad;
         border-bottom: solid 1px #adadad;
         margin-bottom: 32px;
@@ -172,6 +172,7 @@
                     border-radius: 8px;
                     cursor: pointer;
                     outline: none;
+                    font-family: $mainFont;
                     transition: border-color .3s ease-out;
 
                     &:focus {
@@ -289,7 +290,7 @@
             flex: 1;
             gap: 16px;
 
-            .resume--upload--action--divv{
+            .resume--upload--action--divv {
                 text-decoration: none;
                 border: transparent;
                 padding: 0;
@@ -297,7 +298,7 @@
                 outline: none;
             }
 
-            div {
+            .upload--options--div {
                 cursor: pointer;
                 padding: 8px 16px;
                 border: solid 1px #c5c5c5;
@@ -306,7 +307,7 @@
                 transition: border .5s ease-in;
 
 
-                &:hover:not(.resume--upload--action--divv) {
+                &:hover {
                     border: solid 1px #FC700A;
                     transition: border .5s ease-in;
                 }
@@ -333,6 +334,64 @@
         .resume--upload--action--div:first-child {
             max-width: 500px;
         }
+
+    }
+
+    .outer--loader--div {
+        width: 600px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+
+
+        .inner--loader--div {
+            width: 316px;
+            height: 10px;
+            background: white;
+
+            &:hover {
+                .loader--div {
+                    animation: fillLoader 2s ease;
+                }
+            }
+
+            .loader--div {
+                width: inherit;
+                width: fit-content;
+                height: 10px;
+                background: #FC700A;
+            }
+        }
+    }
+
+    #loader--closer {
+        opacity: 50%;
+        margin-top: 6px;
+        height: fit-content;
+        cursor: pointer;
+    }
+
+    .loaderLoading {
+        animation: fillLoader 2s ease;
+    }
+
+    .filename--div {
+        display: flex;
+        gap: 16px;
+        flex-wrap: nowrap;
+        place-items: center;
+        // background: red;
+    }
+
+    @keyframes fillLoader {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
     }
 }
 
@@ -341,7 +400,7 @@
 @media(max-width: 856px) {
 
     .application--container {
-        margin: 0px 16px 32px 16px;
+        margin: 16px 16px 32px 0;
 
     }
 
@@ -349,7 +408,7 @@
 
 
 
-@media(max-width: 600px) {
+@media(max-width: 675px) {
     .container {
         padding: 0 16px 32px 16px;
 
@@ -369,6 +428,15 @@
     }
 
     .application--container {
+        // padding: 0 16px 32px 16px;
+
+        .application--container--text {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 36px;
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
 
         form {
 
