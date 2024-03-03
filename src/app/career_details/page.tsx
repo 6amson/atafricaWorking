@@ -1,7 +1,8 @@
 "use client"
 
 import Footer from "../style/components/footer/footer"
-import { useState, useEffect, useRef, HTMLAttributeReferrerPolicy } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import "./career_details.scss"
 import fileupload from "../../../assets/fileuploadIcon.svg";
 import googledriveupload from "../../../assets/googledriveuploadIcon.svg";
@@ -50,7 +51,7 @@ const customStylesM = {
 export default function CareersDetails() {
 
     const isMediumScreen = useMediaQuery({ query: '(max-width: 856px)' });
-
+    const router = useRouter();
     const [modalIsOpen, setIsOpen] = useState(false);
     const [fileName, setFileName] = useState('');
     const [inputState, setInputState] = useState(true);
@@ -126,6 +127,8 @@ export default function CareersDetails() {
         setInputLoaderState2(false)
         setTextareaState(false)
     }
+
+   
 
     const resumeUploadOptions = [
         {

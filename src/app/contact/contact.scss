@@ -1,7 +1,13 @@
 @import "../style/variables.scss";
 
-.main {
+#main {
     padding: 80px 160px;
+
+    // #main {
+    //     min-height: calc(100vh - 107px);
+    //     font-family: $mainFont;
+    //     position: relative;
+    // }
 
     .main--sub1 {
         font-family: $mainFont;
@@ -208,7 +214,7 @@
 
 @media (max-width: 800px) {
     .careers--input--container {
-        padding: 80px 160px;
+        padding: 32px 16px;
 
         form {
 
@@ -236,7 +242,7 @@
 
 
 @media (max-width: 600px) {
-    .main {
+    #main {
         padding: 32px 16px;
 
         .main--sub1 {

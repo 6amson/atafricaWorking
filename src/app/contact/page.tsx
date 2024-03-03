@@ -117,7 +117,7 @@ export default function Contact() {
     ]
 
     return (
-        <main id="root">
+        <div id="root">
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
@@ -129,10 +129,10 @@ export default function Contact() {
                 <div id="imgModaldiv2">
                     <p id="imgModalText1">Thanks for reaching out!</p>
                     <div id="imgModal2"><Image src={checkIcon} alt="check icon" /></div>
-                    <p id="imgModalText2">Message sent successfully</p>
+                    <p id="imgModalText2">Message sent</p>
                 </div>
             </Modal>
-            <div className="main">
+            <div id="main">
                 <div className="main--sub1">
                     <p>Get in touch!</p>
                     <p>We&apos;d love to hear from you. Our team will reach out ASAP!</p>
@@ -192,6 +192,6 @@ export default function Contact() {
             </div>
 
             <Footer />
-        </main >
+        </div>
     )
 }
