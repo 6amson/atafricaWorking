@@ -60,9 +60,6 @@ export default function CareersDetails() {
     const [coverLetterLocal, setCoverLetterLocal] = useState({});
 
 
-    const fileLoader2 = document.getElementById(".loader--div2");
-
-
     useEffect(() => {
         const root = document.getElementById('root');
         ReactModal.setAppElement(root ? root : "root");
