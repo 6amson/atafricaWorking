@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import "./careers.scss";
 import arrow from '../../../assets/ri_arrow-up-line.svg';
@@ -78,7 +79,7 @@ export default function Careers() {
 
     return (
         <main>
-            <div className="main">
+            <div className="main--career">
                 <div className="homepage--text">
                     <p>Shape Tomorrow&apos;s Success with ATAfrica</p>
                     <p>Discover Opportunities That Propel Your Career Forward</p>
@@ -87,7 +88,7 @@ export default function Careers() {
                         <Image src={arrow} alt='arrow pointed right' className='arrrow--icon' />
                     </div>
                 </div>
-                <div className="homepage--background">
+                <div className="homepage--background2">
                     <Image className="homepage--background--img" src={careerbg} alt="careers homepage backgroound" />
                     <Image className="homepage--background--img2" src={careerbg2} alt="careers homepage backgroound--mobile" />
                 </div>
