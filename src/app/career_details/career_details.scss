@@ -305,6 +305,24 @@
                 border-radius: 100px;
                 display: flex;
                 transition: border .5s ease-in;
+                position: relative;
+                overflow: hidden;
+
+                .upload--options--localfile {
+                    background: transparent;
+                    width: fit-content;
+                    height: inherit;
+                    color: transparent;
+                    position: absolute;
+                    left: 0;
+                    padding: 14px 16px;
+                    bottom: 0px;
+                    cursor: pointer;
+                }
+
+                input[type="file"]::-webkit-file-upload-button {
+                    display: none;
+                }
 
 
                 &:hover {
@@ -350,17 +368,18 @@
             height: 10px;
             background: white;
 
-            &:hover {
-                .loader--div {
-                    animation: fillLoader 2s ease;
-                }
-            }
+            // &:hover {
+            //     .loader--div {
+            //         animation: fillLoader 2s ease;
+            //     }
+            // }
 
             .loader--div {
                 width: inherit;
                 width: fit-content;
                 height: 10px;
                 background: #FC700A;
+                animation: fillLoader 2s ease;
             }
         }
     }
