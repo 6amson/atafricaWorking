@@ -1,7 +1,7 @@
 @import "../style/variables.scss";
 
 
-.container {
+.container--career--details {
     height: max-content;
     padding: 0 100px 160px 100px;
     display: flex;
@@ -428,7 +428,7 @@
 
 
 @media(max-width: 675px) {
-    .container {
+    .container--career--details {
         padding: 0 16px 32px 16px;
 
 

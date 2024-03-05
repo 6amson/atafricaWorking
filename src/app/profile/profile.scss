@@ -39,6 +39,7 @@
     }
 }
 
+
 .industry--section {
     padding: 0px 100px;
 
@@ -69,9 +70,13 @@
                 border-bottom: solid 1px grey;
                 width: 250px;
                 background: transparent;
+                outline: none;
+                font-size: 16px;
 
                 option {
                     font-size: 16px;
+                    font-family: $mainFont;
+                    background: transparent;
                 }
             }
 
@@ -90,6 +95,7 @@
                 padding-right: 16px;
                 outline: none;
                 font-family: $mainFont;
+                font-size: 16px;
                 transition: border-color .3s ease-out;
 
                 &:focus {
@@ -186,12 +192,12 @@
             border: solid 1px black;
             width: 130px;
             background: #ADADAD;
-            cursor: pointer; 
+            cursor: pointer;
             transition: border .3s ease-out, color .3s ease-in, background .3s ease-in-out;
 
 
-            &:hover{
-                border:solid 1px #FC700A;
+            &:hover {
+                border: solid 1px #FC700A;
                 color: whitesmoke;
                 background: black;
                 transition: border .3s ease-out, color .3s ease-in, background .3s ease-in-out;

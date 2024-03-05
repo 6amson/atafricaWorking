@@ -56,6 +56,11 @@ export default function Contact() {
         setIsOpen(true);
     }
 
+    const handleContactSubmit = (e: any) => {
+        e.preventDefault();
+        openModal();
+    }
+
     function afterOpenModal() {
         const imgModal = document.getElementById('imgModal');
         const imgModal2 = document.getElementById('imgModal2');
@@ -80,14 +85,24 @@ export default function Contact() {
             imgModaldiv2.style.justifyContent = 'center';
             imgModaldiv2.style.alignItems = 'center';
 
-            imgModalText2.classList.add('defineFontType2');
-            imgModalText1.classList.add('defineFontType1');
+            imgModalText2.classList.add(isMediumScreen ? 'defineFontType2M' : "defineFontType2");
+            imgModalText1.classList.add(isMediumScreen ? 'defineFontType1M' : "defineFontType1");
 
 
         }
     }
 
     function closeModal() {
+        const imgModalText1 = document.getElementById('imgModalText1');
+        const imgModalText2 = document.getElementById('imgModalText2');
+
+
+        if (imgModalText1 && imgModalText2) {
+
+            imgModalText2.classList.remove(isMediumScreen ? 'defineFontType2' : "defineFontType2M");
+            imgModalText1.classList.remove(isMediumScreen ? 'defineFontType1' : "defineFontType1M");
+            
+        }
         setIsOpen(false);
     }
 
@@ -123,7 +138,7 @@ export default function Contact() {
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 style={isMediumScreen ? customStylesM : customStyles}
-                contentLabel="Example Modal"
+                contentLabel="Submission"
             >
                 <div id="imgModal"><Image onClick={closeModal} src={closeModalIcon} alt="close modal icon" /></div>
                 <div id="imgModaldiv2">
@@ -185,7 +200,7 @@ export default function Contact() {
                     <textarea id="message" name="message" placeholder="Enter your message here" rows={4} cols={50}></textarea>
 
                     <div id="submit--div">
-                        <input onClick={openModal} type="submit" value="SEND MESSSAGE" id="submitButton"></input>
+                        <input onClick={handleContactSubmit} type="submit" value="SEND MESSSAGE" id="submitButton"></input>
                     </div>
                 </form>
 

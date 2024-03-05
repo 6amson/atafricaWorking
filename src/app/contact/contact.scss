@@ -3,12 +3,6 @@
 #main {
     padding: 80px 160px;
 
-    // #main {
-    //     min-height: calc(100vh - 107px);
-    //     font-family: $mainFont;
-    //     position: relative;
-    // }
-
     .main--sub1 {
         font-family: $mainFont;
 
@@ -114,6 +108,7 @@
                     cursor: pointer;
                     outline: none;
                     transition: border-color .3s ease-out;
+                    font-family: $mainFont;
 
                     &:focus {
                         border-color: #FC700A;
@@ -190,10 +185,33 @@
     justify-content: center;
 }
 
+.defineFontType2M {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    font-family: $mainFont;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .defineFontType1 {
     font-size: 32px;
     font-weight: 300;
     line-height: 48px;
+    letter-spacing: 0em;
+    text-align: center;
+    font-family: $mainFont;
+    margin-bottom: 16px;
+}
+
+.defineFontType1M {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
     letter-spacing: 0em;
     text-align: center;
     font-family: $mainFont;

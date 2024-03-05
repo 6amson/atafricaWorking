@@ -124,6 +124,7 @@ export default function CareersDetails() {
                     alert('Please select a PDF, DOC, DOCX, TXT, or RTF file.');
                     event.target.value = null;
                     setResumeLocal({});
+                    closeFileUpload();
                 }
             }
         }, 2000);
@@ -149,6 +150,7 @@ export default function CareersDetails() {
                     alert('Please select a PDF, DOC, DOCX, TXT, or RTF file.');
                     event.target.value = null;
                     setCoverLetterLocal({});
+                    closeFileUpload2();
                 }
             }
         }, 2000);
@@ -211,7 +213,7 @@ export default function CareersDetails() {
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 style={isMediumScreen ? customStylesM : customStyles}
-                contentLabel="Example Modal"
+                contentLabel="Submission"
             >
                 <div id="imgModal"><Image style={closeIconStyles} onClick={closeModal} src={closeModalIcon} alt="close modal icon" /></div>
                 <div id="imgModaldiv2">
@@ -219,7 +221,7 @@ export default function CareersDetails() {
                     <p>Application submitted</p>
                 </div>
             </Modal>
-            <div className="container">
+            <div className="container--career--details">
                 <p className="job--title">Product Manager - FT9JA</p>
 
                 <div className="job--container1">
